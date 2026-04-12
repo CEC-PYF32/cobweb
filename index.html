@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Kit Khong · Warm & credible portfolio</title>
-    <meta name="description" content="Khong Chun Kit (Kit) — experience across Murata, Apple, Singapore Flyer, Gardens by the Bay, NUS Agritech, Singapore Polytechnic. Photographer, traveller, foodie." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kit Khong · Portfolio & Projects</title>
     
-    <!-- Google Fonts + Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
-    <!-- Feather Icons (rounded line icons) + fallback -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- SEO & Meta -->
+    <meta name="description" content="Khong Chun Kit (Kit) — experience across Murata, Apple, Singapore Flyer, Gardens by the Bay, NUS Agritech, Singapore Polytechnic. Photographer, traveller, foodie." />
+    <meta name="author" content="Khong Chun Kit" />
+    <meta property="og:title" content="Kit Khong — Portfolio & Projects" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://madhurimarawat.github.io/Portfolio-Templates" />
+    <meta property="og:image" content="{{ site.baseurl }}/assets/images/og-preview.jpg" />
+    
+    <!-- Favicon & Fonts -->
+    <link rel="icon" href="#" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -18,78 +25,97 @@
             box-sizing: border-box;
         }
 
-        /* ---------- COLOR & TYPOGRAPHY (teal accent, playful yet credible) ---------- */
+        /* ----- LIGHT MODE (default) ----- */
         :root {
-            --bg: #F9F9FB;         /* off-white */
-            --surface: #FFFFFF;
-            --text-main: #1A1A1A;
-            --text-soft: #4A4A5A;
-            --accent: #1E6F5C;     /* Soft Teal — playful but grounded */
-            --accent-light: #E0F2EF;
-            --accent-glow: rgba(30,111,92,0.08);
-            --border-light: #E9ECF0;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
-            --shadow-md: 0 12px 24px -12px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 20px 28px -12px rgba(30,111,92,0.12);
-            --transition: 0.2s ease;
+            --bg: #fefefe;
+            --surface: #ffffff;
+            --surface-soft: #f8fafc;
+            --text: #0a1c2f;
+            --text-muted: #2c3e50;
+            --border: #e2edf2;
+            --accent: #1a6d5e;
+            --accent-light: #d9f0ec;
+            --accent-glow: rgba(26,109,94,0.08);
+            --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.03);
+            --hover-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+            --timing: 0.2s ease;
         }
 
         body.dark {
-            --bg: #121826;
-            --surface: #1A202E;
-            --text-main: #EDF2F7;
-            --text-soft: #A0AEC0;
-            --accent: #48BBAA;
-            --accent-light: #1F3E3A;
-            --border-light: #2D3748;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 12px 20px rgba(0, 0, 0, 0.4);
-            --accent-glow: rgba(72,187,170,0.12);
+            --bg: #0f1a24;
+            --surface: #1a2a36;
+            --surface-soft: #15232e;
+            --text: #eef4ff;
+            --text-muted: #bdd3e8;
+            --border: #2a3f4c;
+            --accent: #7bc9bd;
+            --accent-light: #1e3f3a;
+            --accent-glow: rgba(123,201,189,0.12);
+            --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --hover-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
         }
 
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg);
-            color: var(--text-main);
-            line-height: 1.45;
+            color: var(--text);
+            line-height: 1.5;
+            transition: background 0.2s, color 0.2s;
             scroll-behavior: smooth;
         }
 
-        /* subtle dot grid background */
-        .dot-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(var(--accent) 0.8px, transparent 0.8px);
-            background-size: 28px 28px;
-            opacity: 0.02;
-            pointer-events: none;
-            z-index: 0;
-        }
-
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 1.75rem;
-            position: relative;
-            z-index: 2;
+            padding: 0 2rem;
         }
 
-        /* ----- navigation (clean) ----- */
+        /* ----- TYPOGRAPHY & UTILITIES ----- */
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            background: linear-gradient(120deg, var(--accent-light) 0%, var(--accent-light) 40%, transparent 80%);
+            padding: 0 0.8rem 0 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .section-subhead {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 48rem;
+            margin-bottom: 2rem;
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        /* ----- NAVIGATION (clean, no top headers) ----- */
         .navbar {
-            padding: 1.2rem 0;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
             position: sticky;
             top: 0;
-            background: rgba(249,249,251,0.8);
-            backdrop-filter: blur(12px);
-            z-index: 30;
-            border-bottom: 1px solid var(--border-light);
+            z-index: 20;
+            backdrop-filter: blur(10px);
+            background-color: rgba(var(--bg-rgb), 0.7);
         }
-        body.dark .navbar {
-            background: rgba(18,24,38,0.85);
-        }
+        
+        /* needed for transparent fallback */
+        body:not(.dark) .navbar { background-color: rgba(254,254,254,0.85); }
+        body.dark .navbar { background-color: rgba(15,26,36,0.85); }
+
         .nav-inner {
             display: flex;
             justify-content: space-between;
@@ -97,84 +123,109 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
+
         .logo a {
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             font-weight: 700;
             text-decoration: none;
-            color: var(--text-main);
+            color: var(--text);
             letter-spacing: -0.3px;
-            display: inline-block;
-            transition: transform var(--transition), box-shadow var(--transition);
         }
-        .logo a:hover {
-            transform: translateY(-4px);
-            text-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+
         .logo span {
             color: var(--accent);
+            font-weight: 600;
         }
+
+        /* page links only (no templates/passions/github/linkedin) */
         .page-links {
             display: flex;
             gap: 2rem;
             list-style: none;
             align-items: center;
         }
+
         .page-links a {
             text-decoration: none;
             font-weight: 500;
-            color: var(--text-soft);
-            transition: color var(--transition);
+            color: var(--text-muted);
+            transition: color 0.2s;
             font-size: 0.95rem;
         }
-        .page-links a:hover { color: var(--accent); }
+
+        .page-links a:hover {
+            color: var(--accent);
+        }
+
         .theme-toggle {
             background: var(--surface);
-            border: 1px solid var(--border-light);
-            border-radius: 40px;
-            padding: 0.4rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            padding: 0.45rem 1rem;
             cursor: pointer;
-            font-size: 0.8rem;
-            transition: all var(--transition);
-        }
-        .theme-toggle:hover {
-            box-shadow: var(--shadow-sm);
-            transform: translateY(-1px);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: all 0.2s;
         }
 
-        /* section headings with ONE muted emoji */
-        .section-head {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: -0.3px;
-            display: inline-flex;
+        /* ----- HERO (no stats row) ----- */
+        .hero {
+            padding: 3rem 0 2rem;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
             align-items: center;
-            gap: 0.6rem;
-        }
-        .section-head i, .section-head .emoji-muted {
-            font-size: 1.6rem;
-            color: var(--accent);
-            opacity: 0.8;
-        }
-        .section-sub {
-            font-size: 1rem;
-            color: var(--text-soft);
-            max-width: 42rem;
-            margin-bottom: 2rem;
-            border-left: 3px solid var(--accent);
-            padding-left: 1rem;
         }
 
-        /* companies chips (grayscale + color on hover) */
+        .hero-content {
+            flex: 1.4;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-media {
+            flex: 1;
+            background: var(--surface-soft);
+            border-radius: 2rem;
+            aspect-ratio: 4 / 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+            gap: 0.5rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* ----- INFO BOARD CARDS (companies) ----- */
+        .board-section {
+            margin: 3rem 0 2.5rem;
+        }
+
         .companies-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.9rem;
-            margin: 1.5rem 0 1rem;
+            gap: 1rem;
+            margin: 1.8rem 0 1rem;
         }
+
         .company-chip {
             background: var(--surface);
-            border: 1px solid var(--border-light);
+            border: 1px solid var(--border);
             border-radius: 60px;
             padding: 0.6rem 1.4rem;
             display: inline-flex;
@@ -182,224 +233,165 @@
             gap: 0.65rem;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: all var(--transition);
-            box-shadow: var(--shadow-sm);
-            filter: grayscale(0.2);
+            transition: all 0.2s;
+            box-shadow: var(--card-shadow);
         }
+
         .company-chip i {
-            font-size: 1.1rem;
-            color: var(--text-soft);
-            transition: color 0.2s;
+            font-size: 1.2rem;
+            color: var(--accent);
+            width: 1.4rem;
         }
+
         .company-chip:hover {
-            filter: grayscale(0);
             transform: translateY(-3px);
             border-color: var(--accent);
-            box-shadow: var(--shadow-hover);
-            background: var(--surface);
-        }
-        .company-chip:hover i {
-            color: var(--accent);
+            box-shadow: var(--hover-shadow);
         }
 
-        /* stat cards + number count up */
-        .stats-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 2.5rem 0 1rem;
-        }
-        .stat-card {
-            background: var(--surface);
-            border-radius: 24px;
-            padding: 1.2rem 1.8rem;
-            text-align: center;
-            flex: 1;
-            min-width: 120px;
-            border: 1px solid var(--border-light);
-            transition: transform var(--transition);
-        }
-        .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-        .stat-number {
-            font-size: 2.6rem;
-            font-weight: 800;
-            color: var(--accent);
-            line-height: 1;
-        }
-        .stat-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-soft);
-            margin-top: 0.3rem;
-        }
-
-        /* project cards with "Read more" slide-in */
+        /* project cards (projects page area) */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.8rem;
-            margin: 2rem 0;
-        }
-        .project-card {
-            background: var(--surface);
-            border-radius: 20px;
-            padding: 1.4rem;
-            border: 1px solid var(--border-light);
-            transition: all var(--transition);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .project-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, var(--accent-light), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        .project-card:hover::after {
-            opacity: 0.2;
-        }
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent);
-        }
-        .read-more {
-            display: inline-block;
-            margin-top: 0.8rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent);
-            transform: translateX(0);
-            transition: transform 0.2s ease;
-            opacity: 0.7;
-        }
-        .project-card:hover .read-more {
-            transform: translateX(8px);
-            opacity: 1;
-        }
-        .project-icon {
-            font-size: 1.8rem;
-            color: var(--accent);
-            margin-bottom: 0.6rem;
+            margin-top: 1.8rem;
         }
 
-        /* Interests chips (playful) */
+        .project-card {
+            background: var(--surface);
+            border-radius: 1.5rem;
+            padding: 1.4rem;
+            border: 1px solid var(--border);
+            transition: all 0.25s;
+            box-shadow: var(--card-shadow);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+            border-color: var(--accent);
+        }
+
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent);
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Interests chips */
         .interests-list {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            margin: 1rem 0;
-        }
-        .interest-badge {
-            background: var(--surface);
-            border-radius: 60px;
-            padding: 0.6rem 1.6rem;
-            font-weight: 500;
-            border-left: 3px solid var(--accent);
-            transition: all 0.2s;
-            box-shadow: var(--shadow-sm);
+            margin: 1rem 0 1rem;
         }
 
-        /* contact icons */
-        .contact-icons {
-            display: flex;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .contact-icon-link {
-            background: var(--surface);
+        .interest-badge {
+            background: var(--surface-soft);
             border-radius: 40px;
             padding: 0.7rem 1.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            text-decoration: none;
-            color: var(--text-main);
-            border: 1px solid var(--border-light);
-            transition: all var(--transition);
+            font-size: 1rem;
+            font-weight: 500;
+            border-left: 4px solid var(--accent);
+            transition: all 0.2s;
         }
-        .contact-icon-link i {
-            font-size: 1.3rem;
+
+        .interest-badge i {
+            margin-right: 8px;
             color: var(--accent);
         }
+
+        /* contact social icons row */
+        .contact-icons {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .contact-icon-link {
+            background: var(--surface);
+            border-radius: 60px;
+            padding: 0.8rem 1.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--text);
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .contact-icon-link i {
+            font-size: 1.6rem;
+            color: var(--accent);
+        }
+
         .contact-icon-link:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
+            transform: scale(1.02);
             background: var(--accent-light);
             border-color: var(--accent);
         }
 
-        /* tiny divider (asterisk) */
-        .custom-divider {
+        /* simple divider & footer */
+        .footer {
             text-align: center;
-            margin: 2rem auto;
-            color: var(--accent);
-            opacity: 0.5;
-            font-size: 1rem;
-            letter-spacing: 4px;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 3rem;
         }
 
-        /* loading pulse animation placeholder */
-        .pulse-loader {
-            width: 100%;
-            height: 60px;
-            background: var(--surface);
-            border-radius: 20px;
-            animation: pulseGlow 1.4s ease infinite;
-        }
-        @keyframes pulseGlow {
-            0% { opacity: 0.4; background: var(--border-light);}
-            50% { opacity: 0.8; background: var(--accent-light);}
-            100% { opacity: 0.4; background: var(--border-light);}
-        }
-
-        /* hidden sections + bouncy scroll (already smooth via css) */
+        /* hidden sections (page navigation) */
         .page-section {
             display: none;
-            animation: fadeSlide 0.35s ease-out;
+            animation: fadeIn 0.25s ease;
         }
+
         .active-section {
             display: block;
         }
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(12px);}
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px);}
             to { opacity: 1; transform: translateY(0);}
         }
-        .active-page {
-            color: var(--accent) !important;
+
+        /* active link style */
+        .page-links a.active-page {
+            color: var(--accent);
             font-weight: 600;
             border-bottom: 2px solid var(--accent);
             padding-bottom: 4px;
         }
-        footer {
-            text-align: center;
-            padding: 2rem 0 2.5rem;
-            border-top: none;
-            margin-top: 2rem;
-        }
-        .footer-note {
-            font-size: 0.75rem;
-            color: var(--text-soft);
-        }
-        @media (max-width: 700px) {
+
+        /* Responsive */
+        @media (max-width: 760px) {
             .container { padding: 0 1.2rem; }
-            .section-head { font-size: 1.5rem;}
+            h1 { font-size: 2.2rem; }
+            .page-links { gap: 1rem; }
+            .company-chip { padding: 0.4rem 1rem; font-size: 0.8rem;}
+            .contact-icon-link { padding: 0.5rem 1.2rem; font-size: 0.9rem;}
         }
     </style>
 </head>
 <body>
-<div class="dot-bg"></div>
 
 <nav class="navbar">
     <div class="container nav-inner">
@@ -410,147 +402,147 @@
             <li><a href="#" data-page="knowme" class="nav-page active-page">Know Me</a></li>
             <li><a href="#" data-page="projects" class="nav-page">Projects</a></li>
             <li><a href="#" data-page="interests" class="nav-page">Interests</a></li>
-            <li><a href="#" data-page="contact" class="nav-page">Contact</a></li>
+            <li><a href="#" data-page="contact" class="nav-page">Contact Me</a></li>
             <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i> Dark</button></li>
         </ul>
     </div>
 </nav>
 
 <main class="container">
-    <!-- KNOW ME section (with company logos & stats count-up) -->
+    <!-- ========== KNOW ME SECTION (Companies + intro) ========= -->
     <section id="knowme" class="page-section active-section">
-        <div style="margin: 2rem 0 1rem;">
-            <div class="section-head">
-                <i class="fas fa-briefcase"></i> <!-- 💼 muted emoji via icon -->
-                <span>Where I've worked</span>
+        <div class="hero">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge"><i class="fas fa-user-astronaut"></i> Builder & Creator</div>
+                    <h1>Hi, I'm Kit.<br>Building impactful experiences.</h1>
+                    <p class="section-subhead">From embedded systems to agritech, I’ve worked across hardware, operations, and digital product. I blend technical curiosity with human-centric design.</p>
+                </div>
+                <div class="hero-media">
+                    <i class="fas fa-camera" style="font-size: 2rem;"></i>
+                    <span>[ your photo / visual placeholder ]</span>
+                </div>
             </div>
-            <p class="section-sub">Building products & experiences across tech, hospitality, agritech and education.</p>
-        </div>
-        
-        <!-- company chips (grayscale to color on hover) -->
-        <div class="companies-grid">
-            <div class="company-chip"><i class="fas fa-microchip"></i> Murata</div>
-            <div class="company-chip"><i class="fab fa-apple"></i> Apple</div>
-            <div class="company-chip"><i class="fas fa-fan"></i> Singapore Flyer</div>
-            <div class="company-chip"><i class="fas fa-leaf"></i> Gardens by the Bay</div>
-            <div class="company-chip"><i class="fas fa-seedling"></i> NUS Agritech</div>
-            <div class="company-chip"><i class="fas fa-chalkboard-user"></i> Singapore Polytechnic</div>
-            <div class="company-chip"><i class="fas fa-building"></i> [Placeholder Studio]</div>
         </div>
 
-        <!-- stats row with count-up on scroll -->
-        <div class="stats-row">
-            <div class="stat-card" data-count="7">
-                <div class="stat-number" id="stat1">0</div>
-                <div class="stat-label">organizations</div>
+        <div class="board-section">
+            <h2><i class="fas fa-briefcase"></i> Where I've contributed</h2>
+            <div class="companies-grid">
+                <div class="company-chip"><i class="fas fa-microchip"></i> Murata</div>
+                <div class="company-chip"><i class="fab fa-apple"></i> Apple</div>
+                <div class="company-chip"><i class="fas fa-fan"></i> Singapore Flyer</div>
+                <div class="company-chip"><i class="fas fa-leaf"></i> Gardens by the Bay</div>
+                <div class="company-chip"><i class="fas fa-seedling"></i> NUS Agritech</div>
+                <div class="company-chip"><i class="fas fa-chalkboard-user"></i> Singapore Polytechnic</div>
+                <div class="company-chip"><i class="fas fa-ellipsis-h"></i> [Placeholder Studio]</div>
+                <div class="company-chip"><i class="fas fa-building"></i> [Future Lab]</div>
             </div>
-            <div class="stat-card" data-count="5">
-                <div class="stat-number" id="stat2">0</div>
-                <div class="stat-label">industries explored</div>
-            </div>
-            <div class="stat-card" data-count="12">
-                <div class="stat-number" id="stat3">0</div>
-                <div class="stat-label">projects shipped</div>
-            </div>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-plus-circle"></i> plus other collaborative projects — more to come.</p>
         </div>
-        <div class="custom-divider">* * *</div>
     </section>
 
-    <!-- PROJECTS section with card hover slide-in -->
+    <!-- ========== PROJECTS PAGE (placeholders with good visual cues) ========= -->
     <section id="projects" class="page-section">
         <div style="margin: 2rem 0 1rem;">
-            <div class="section-head">
-                <i class="fas fa-tools"></i> <!-- 🛠️ muted -->
-                <span>Recent explorations</span>
-            </div>
-            <p class="section-sub">From sensor fusion to experience design — each project blends curiosity and craft.</p>
+            <h2><i class="fas fa-code-branch"></i> Featured projects</h2>
+            <p class="section-subhead">Selected work that blends tech, design, and real-world impact.</p>
         </div>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-icon"><i class="fas fa-microchip"></i></div>
-                <div class="project-title">Edge AI dashboard</div>
-                <div>Predictive maintenance for industrial IoT (Murata).</div>
-                <div class="read-more">Read more →</div>
+                <div class="project-icon"><i class="fas fa-robot"></i></div>
+                <div class="project-tag">embedded · edge AI</div>
+                <div class="project-title">Sensor fusion dashboard</div>
+                <p class="card-desc">Industrial IoT prototype for predictive maintenance (Murata collaboration).</p>
             </div>
             <div class="project-card">
                 <div class="project-icon"><i class="fas fa-tree"></i></div>
+                <div class="project-tag">sustainability · UX</div>
                 <div class="project-title">Cooling load optimizer</div>
-                <div>Gardens by the Bay – real-time environmental UI.</div>
-                <div class="read-more">Read more →</div>
+                <p class="card-desc">Gardens by the Bay – smart environmental monitoring interface.</p>
             </div>
             <div class="project-card">
                 <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="project-title">Apple accessibility lab</div>
-                <div>Prototyping inclusive interactions.</div>
-                <div class="read-more">Read more →</div>
+                <div class="project-tag">iOS · prototyping</div>
+                <div class="project-title">Apple design lab</div>
+                <p class="card-desc">Accessibility-focused UI explorations (internal showcase).</p>
             </div>
             <div class="project-card">
                 <div class="project-icon"><i class="fas fa-tractor"></i></div>
+                <div class="project-tag">agritech · research</div>
                 <div class="project-title">Hydroponic monitor</div>
-                <div>NUS Agritech – crop health dashboard.</div>
-                <div class="read-more">Read more →</div>
+                <p class="card-desc">NUS Agritech – real-time crop health dashboard.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="project-tag">analytics · operations</div>
+                <div class="project-title">Singapore Flyer guest flow</div>
+                <p class="card-desc">Data-driven visitor insights and queue optimization.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="project-tag">education · workshop</div>
+                <div class="project-title">SP prototype bootcamp</div>
+                <p class="card-desc">Singapore Polytechnic – design thinking for engineering students.</p>
             </div>
         </div>
-        <!-- placeholder for future images/videos: subtle pulse loading demo -->
-        <div class="pulse-loader" style="margin: 1rem 0; display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--text-soft);">
-            <i class="fas fa-images"></i> <span style="font-size: 0.75rem;">Images & videos arriving soon · subtle pulse</span>
+        <div class="board-section" style="margin-top: 1rem;">
+            <div style="background: var(--accent-glow); border-radius: 1rem; padding: 1rem 1.4rem; border-left: 4px solid var(--accent);">
+                <i class="fas fa-lightbulb"></i> <strong>More projects in progress</strong> — placeholder for videos & images later.
+            </div>
         </div>
-        <div class="custom-divider">⋯</div>
     </section>
 
-    <!-- INTERESTS page -->
+    <!-- ========== INTERESTS PAGE ========= -->
     <section id="interests" class="page-section">
         <div style="margin: 2rem 0 1rem;">
-            <div class="section-head">
-                <i class="fas fa-heart"></i> <!-- one muted emoji -->
-                <span>Off-duty rituals</span>
-            </div>
-            <p class="section-sub">Photography, traveller and foodie — capturing stories around the globe.</p>
+            <h2><i class="fas fa-heart"></i> Things that fuel me</h2>
+            <p class="section-subhead">Outside the screen, I explore, capture, and savour.</p>
         </div>
         <div class="interests-list">
-            <div class="interest-badge"><i class="fas fa-camera"></i> Photography</div>
+            <div class="interest-badge"><i class="fas fa-camera-retro"></i> Photography</div>
             <div class="interest-badge"><i class="fas fa-plane-departure"></i> Traveller</div>
             <div class="interest-badge"><i class="fas fa-utensils"></i> Foodie</div>
         </div>
-        <div style="margin-top: 1.8rem; background: var(--accent-glow); border-radius: 24px; padding: 1.2rem;">
-            <i class="fas fa-map-pin"></i> 20+ countries · street & documentary photography · hawker hunting
+        <div class="companies-grid" style="margin-top: 2rem;">
+            <div class="company-chip"><i class="fas fa-map-marker-alt"></i> street & documentary</div>
+            <div class="company-chip"><i class="fas fa-passport"></i> 20+ countries</div>
+            <div class="company-chip"><i class="fas fa-mug-hot"></i> hidden cafes hunter</div>
         </div>
-        <div class="custom-divider">* * *</div>
+        <div style="margin-top: 2rem; background: var(--surface-soft); border-radius: 1.2rem; padding: 1rem 1.5rem;">
+            <i class="fas fa-image" style="margin-right: 0.5rem; color: var(--accent);"></i> 
+            <em>📸 visual diary coming soon — images & video reels will live here.</em>
+        </div>
     </section>
 
-    <!-- CONTACT page -->
+    <!-- ========== CONTACT ME PAGE ========= -->
     <section id="contact" class="page-section">
         <div style="margin: 2rem 0 1rem;">
-            <div class="section-head">
-                <i class="fas fa-envelope"></i> <!-- 📬 -->
-                <span>Let's connect</span>
-            </div>
-            <p class="section-sub">Collaborations, coffee chats, or just to say hi — I’d love to hear from you.</p>
+            <h2><i class="fas fa-paper-plane"></i> Let's connect</h2>
+            <p class="section-subhead">Reach out for collaborations, coffee chats, or just to say hi.</p>
         </div>
         <div class="contact-icons">
-            <a href="#" class="contact-icon-link"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#" class="contact-icon-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="#" class="contact-icon-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="contact-icon-link" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
         </div>
-        <div style="margin-top: 1.2rem; font-size: 0.85rem; color: var(--text-soft);">
-            <i class="fas fa-map-marker-alt"></i> Singapore · available for freelance and creative collabs
+        <div style="margin-top: 2rem; padding: 1rem; background: var(--surface); border-radius: 1.5rem; border: 1px dashed var(--border);">
+            <i class="fas fa-envelope"></i> kit.khong@example.com <span style="color: var(--text-muted);">(placeholder)</span><br>
+            <small>📍 Singapore · based between studio and field</small>
         </div>
-        <div class="custom-divider">⋯</div>
     </section>
 </main>
 
-<footer>
+<footer class="footer">
     <div class="container">
-        <div class="footer-note">Thanks for scrolling ✨ — built with warmth & light interactions</div>
-        <div class="footer-note" style="margin-top: 0.5rem;">© <span id="currentYear"></span> Khong Chun Kit (Kit)</div>
+        <p>© <span id="currentYear"></span> Khong Chun Kit (Kit) — crafted with curiosity & light interactions</p>
     </div>
 </footer>
 
 <script>
-    // ---------- THEME + localstorage ----------
+    // ---------- THEME TOGGLE ----------
     const toggleBtn = document.getElementById('themeToggle');
     const body = document.body;
-    const storedTheme = localStorage.getItem('kit_theme_light');
-    if (storedTheme === 'dark') {
+    const savedTheme = localStorage.getItem('kit_theme');
+    if (savedTheme === 'dark') {
         body.classList.add('dark');
         toggleBtn.innerHTML = '<i class="fas fa-sun"></i> Light';
     } else {
@@ -559,11 +551,11 @@
     toggleBtn.addEventListener('click', () => {
         body.classList.toggle('dark');
         const isDark = body.classList.contains('dark');
-        localStorage.setItem('kit_theme_light', isDark ? 'dark' : 'light');
+        localStorage.setItem('kit_theme', isDark ? 'dark' : 'light');
         toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i> Light' : '<i class="fas fa-moon"></i> Dark';
     });
 
-    // ---------- page navigation with bouncy smooth scroll (already smooth scroll, but extra offset) ----------
+    // ---------- PAGE NAVIGATION (Know me, Projects, Interests, Contact me) ----------
     const pages = ['knowme', 'projects', 'interests', 'contact'];
     const sections = {
         knowme: document.getElementById('knowme'),
@@ -572,16 +564,24 @@
         contact: document.getElementById('contact')
     };
     const navLinks = document.querySelectorAll('.nav-page');
-    
+
     function activatePage(pageId) {
-        Object.values(sections).forEach(sec => sec?.classList.remove('active-section'));
-        if(sections[pageId]) sections[pageId].classList.add('active-section');
+        // hide all sections
+        Object.values(sections).forEach(section => {
+            if (section) section.classList.remove('active-section');
+        });
+        // show current
+        if (sections[pageId]) sections[pageId].classList.add('active-section');
+        // update active class on nav items
         navLinks.forEach(link => {
             const linkPage = link.getAttribute('data-page');
-            if (linkPage === pageId) link.classList.add('active-page');
-            else link.classList.remove('active-page');
+            if (linkPage === pageId) {
+                link.classList.add('active-page');
+            } else {
+                link.classList.remove('active-page');
+            }
         });
-        // bouncy smooth scroll (small offset)
+        // optional: smooth scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -589,70 +589,43 @@
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const pageId = link.getAttribute('data-page');
-            if(pageId && sections[pageId]) {
+            if (pageId && sections[pageId]) {
                 activatePage(pageId);
+                // push state for aesthetics (optional)
                 history.pushState({ page: pageId }, '', `#${pageId}`);
             }
         });
     });
-    const hash = window.location.hash.slice(1);
-    if (hash && pages.includes(hash)) activatePage(hash);
-    else activatePage('knowme');
+
+    // handle initial hash or default to 'knowme'
+    const hash = window.location.hash.substring(1);
+    if (hash && pages.includes(hash)) {
+        activatePage(hash);
+    } else {
+        activatePage('knowme');
+    }
+
+    // handle back/forward
     window.addEventListener('popstate', (e) => {
-        const h = window.location.hash.slice(1);
-        if (h && pages.includes(h)) activatePage(h);
-        else activatePage('knowme');
+        const hashPage = window.location.hash.substring(1);
+        if (hashPage && pages.includes(hashPage)) {
+            activatePage(hashPage);
+        } else {
+            activatePage('knowme');
+        }
     });
 
-    // ---------- STATS COUNT-UP (Intersection Observer) ----------
-    const statNumbers = [
-        { element: document.getElementById('stat1'), target: 7, animated: false },
-        { element: document.getElementById('stat2'), target: 5, animated: false },
-        { element: document.getElementById('stat3'), target: 12, animated: false }
-    ];
-    function animateStat(statObj) {
-        if (statObj.animated) return;
-        statObj.animated = true;
-        let current = 0;
-        const step = Math.ceil(statObj.target / 25);
-        const interval = setInterval(() => {
-            current += step;
-            if (current >= statObj.target) {
-                statObj.element.innerText = statObj.target;
-                clearInterval(interval);
-            } else {
-                statObj.element.innerText = current;
-            }
-        }, 20);
-    }
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const parentCard = entry.target.closest('.stat-card');
-                if (parentCard) {
-                    const idx = Array.from(parentCard.parentNode.children).indexOf(parentCard);
-                    if (statNumbers[idx] && !statNumbers[idx].animated) animateStat(statNumbers[idx]);
-                }
-            }
-        });
-    }, { threshold: 0.4 });
-    document.querySelectorAll('.stat-card').forEach(card => observer.observe(card));
-
-    // ensure stats start at 0 but keep if already visible
-    if (document.querySelector('#knowme.active-section')) {
-        setTimeout(() => {
-            document.querySelectorAll('.stat-card').forEach((card, idx) => {
-                if (card.getBoundingClientRect().top < window.innerHeight) animateStat(statNumbers[idx]);
-            });
-        }, 200);
-    }
-
-    // extra interaction: no flying animations, only clean hover & read-more slide (already in CSS)
-    // footer year
+    // Footer year
     document.getElementById('currentYear').innerText = new Date().getFullYear();
 
-    // add hover to non-clickable text? not needed; we follow the 'too much' rule, only cards.
-    // also divider asterisk already present.
+    // interactive micro-interaction: hover on chips shows subtle scale + border
+    const chips = document.querySelectorAll('.company-chip, .interest-badge, .project-card, .contact-icon-link');
+    chips.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            el.style.transition = 'all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1)';
+        });
+    });
 </script>
+
 </body>
 </html>
