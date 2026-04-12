@@ -1,658 +1,450 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Kit Khong · Warm & credible portfolio</title>
-    <meta name="description" content="Khong Chun Kit (Kit) — experience across Murata, Apple, Singapore Flyer, Gardens by the Bay, NUS Agritech, Singapore Polytechnic. Photographer, traveller, foodie." />
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF6B00;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FF6B00;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    background: linear-gradient(135deg, #000000 0%, #1a0a00 100%);
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.1);
+    color: #FF6B00;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.hero-accent {
+    color: #FF6B00;
+    background: linear-gradient(135deg, #FF6B00, #FF8C3E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #a0a0a0;
+    max-width: 600px;
+    margin: 0 auto 48px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FF6B00;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #a0a0a0;
+}
+
+/* Section Styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.section-tag {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.1);
+    color: #FF6B00;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.title-accent {
+    color: #FF6B00;
+}
+
+/* vCard Section */
+.vcard-section {
+    padding: 80px 0;
+    background: #0a0a0a;
+}
+
+.vcard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    background: #111111;
+    border-radius: 24px;
+    padding: 48px;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+.vcard-info h3 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+}
+
+.vcard-title {
+    color: #FF6B00;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.vcard-description {
+    color: #c0c0c0;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.vcard-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-item {
+    display: flex;
+    gap: 16px;
+    font-size: 0.875rem;
+}
+
+.detail-label {
+    color: #FF6B00;
+    min-width: 100px;
+    font-weight: 500;
+}
+
+.detail-value {
+    color: #ffffff;
+}
+
+.vcard-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vcard-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 107, 0, 0.05);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 107, 0, 0.1);
+}
+
+.stat-icon {
+    font-size: 2rem;
+}
+
+.vcard-stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FF6B00;
+    display: block;
+}
+
+.vcard-stat-label {
+    font-size: 0.875rem;
+    color: #a0a0a0;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 0;
+    background: #000000;
+}
+
+.project-hero {
+    background: linear-gradient(135deg, #111111, #0a0500);
+    border-radius: 24px;
+    padding: 48px;
+    margin-bottom: 48px;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+.project-hero-content {
+    max-width: 800px;
+}
+
+.tech-badge {
+    display: inline-block;
+    background: rgba(255, 107, 0, 0.1);
+    color: #FF6B00;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-family: monospace;
+    margin-bottom: 16px;
+}
+
+.project-description {
+    font-size: 1.125rem;
+    color: #c0c0c0;
+    line-height: 1.6;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    margin-bottom: 64px;
+}
+
+.feature-card {
+    background: #111111;
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 107, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: rgba(255, 107, 0, 0.4);
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: #FF6B00;
+}
+
+.feature-card p {
+    color: #a0a0a0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+/* Tech Stack */
+.tech-stack, .circuits {
+    background: #111111;
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 107, 0, 0.1);
+}
+
+.tech-stack h3, .circuits h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: #FF6B00;
+}
+
+.stack-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.stack-item {
+    background: rgba(255, 107, 0, 0.1);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #FF6B00;
+    font-family: monospace;
+}
+
+.circuit-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.circuit {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #ffffff;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0a0a0a, #000000);
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.contact-content p {
+    color: #a0a0a0;
+    margin-bottom: 32px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.contact-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 100px;
+    background: rgba(255, 107, 0, 0.1);
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background: #FF6B00;
+    color: #000000;
+    border-color: #FF6B00;
+}
+
+/* Footer */
+.footer {
+    padding: 32px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #666;
+    font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
     
-    <!-- Google Fonts + Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
-    <!-- Feather Icons (rounded line icons) + fallback -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    .hero-stats {
+        flex-direction: column;
+        gap: 24px;
+    }
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* ---------- COLOR & TYPOGRAPHY (teal accent, playful yet credible) ---------- */
-        :root {
-            --bg: #F9F9FB;         /* off-white */
-            --surface: #FFFFFF;
-            --text-main: #1A1A1A;
-            --text-soft: #4A4A5A;
-            --accent: #1E6F5C;     /* Soft Teal — playful but grounded */
-            --accent-light: #E0F2EF;
-            --accent-glow: rgba(30,111,92,0.08);
-            --border-light: #E9ECF0;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
-            --shadow-md: 0 12px 24px -12px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 20px 28px -12px rgba(30,111,92,0.12);
-            --transition: 0.2s ease;
-        }
-
-        body.dark {
-            --bg: #121826;
-            --surface: #1A202E;
-            --text-main: #EDF2F7;
-            --text-soft: #A0AEC0;
-            --accent: #48BBAA;
-            --accent-light: #1F3E3A;
-            --border-light: #2D3748;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 12px 20px rgba(0, 0, 0, 0.4);
-            --accent-glow: rgba(72,187,170,0.12);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg);
-            color: var(--text-main);
-            line-height: 1.45;
-            scroll-behavior: smooth;
-        }
-
-        /* subtle dot grid background */
-        .dot-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(var(--accent) 0.8px, transparent 0.8px);
-            background-size: 28px 28px;
-            opacity: 0.02;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.75rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* ----- navigation (clean) ----- */
-        .navbar {
-            padding: 1.2rem 0;
-            position: sticky;
-            top: 0;
-            background: rgba(249,249,251,0.8);
-            backdrop-filter: blur(12px);
-            z-index: 30;
-            border-bottom: 1px solid var(--border-light);
-        }
-        body.dark .navbar {
-            background: rgba(18,24,38,0.85);
-        }
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .logo a {
-            font-size: 1.7rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: var(--text-main);
-            letter-spacing: -0.3px;
-            display: inline-block;
-            transition: transform var(--transition), box-shadow var(--transition);
-        }
-        .logo a:hover {
-            transform: translateY(-4px);
-            text-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        .logo span {
-            color: var(--accent);
-        }
-        .page-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
-        }
-        .page-links a {
-            text-decoration: none;
-            font-weight: 500;
-            color: var(--text-soft);
-            transition: color var(--transition);
-            font-size: 0.95rem;
-        }
-        .page-links a:hover { color: var(--accent); }
-        .theme-toggle {
-            background: var(--surface);
-            border: 1px solid var(--border-light);
-            border-radius: 40px;
-            padding: 0.4rem 1rem;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: all var(--transition);
-        }
-        .theme-toggle:hover {
-            box-shadow: var(--shadow-sm);
-            transform: translateY(-1px);
-        }
-
-        /* section headings with ONE muted emoji */
-        .section-head {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: -0.3px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-        .section-head i, .section-head .emoji-muted {
-            font-size: 1.6rem;
-            color: var(--accent);
-            opacity: 0.8;
-        }
-        .section-sub {
-            font-size: 1rem;
-            color: var(--text-soft);
-            max-width: 42rem;
-            margin-bottom: 2rem;
-            border-left: 3px solid var(--accent);
-            padding-left: 1rem;
-        }
-
-        /* companies chips (grayscale + color on hover) */
-        .companies-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.9rem;
-            margin: 1.5rem 0 1rem;
-        }
-        .company-chip {
-            background: var(--surface);
-            border: 1px solid var(--border-light);
-            border-radius: 60px;
-            padding: 0.6rem 1.4rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.65rem;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all var(--transition);
-            box-shadow: var(--shadow-sm);
-            filter: grayscale(0.2);
-        }
-        .company-chip i {
-            font-size: 1.1rem;
-            color: var(--text-soft);
-            transition: color 0.2s;
-        }
-        .company-chip:hover {
-            filter: grayscale(0);
-            transform: translateY(-3px);
-            border-color: var(--accent);
-            box-shadow: var(--shadow-hover);
-            background: var(--surface);
-        }
-        .company-chip:hover i {
-            color: var(--accent);
-        }
-
-        /* stat cards + number count up */
-        .stats-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 2.5rem 0 1rem;
-        }
-        .stat-card {
-            background: var(--surface);
-            border-radius: 24px;
-            padding: 1.2rem 1.8rem;
-            text-align: center;
-            flex: 1;
-            min-width: 120px;
-            border: 1px solid var(--border-light);
-            transition: transform var(--transition);
-        }
-        .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-        .stat-number {
-            font-size: 2.6rem;
-            font-weight: 800;
-            color: var(--accent);
-            line-height: 1;
-        }
-        .stat-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-soft);
-            margin-top: 0.3rem;
-        }
-
-        /* project cards with "Read more" slide-in */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 1.8rem;
-            margin: 2rem 0;
-        }
-        .project-card {
-            background: var(--surface);
-            border-radius: 20px;
-            padding: 1.4rem;
-            border: 1px solid var(--border-light);
-            transition: all var(--transition);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .project-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(120deg, transparent, var(--accent-light), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        .project-card:hover::after {
-            opacity: 0.2;
-        }
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent);
-        }
-        .read-more {
-            display: inline-block;
-            margin-top: 0.8rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent);
-            transform: translateX(0);
-            transition: transform 0.2s ease;
-            opacity: 0.7;
-        }
-        .project-card:hover .read-more {
-            transform: translateX(8px);
-            opacity: 1;
-        }
-        .project-icon {
-            font-size: 1.8rem;
-            color: var(--accent);
-            margin-bottom: 0.6rem;
-        }
-
-        /* Interests chips (playful) */
-        .interests-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        .interest-badge {
-            background: var(--surface);
-            border-radius: 60px;
-            padding: 0.6rem 1.6rem;
-            font-weight: 500;
-            border-left: 3px solid var(--accent);
-            transition: all 0.2s;
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* contact icons */
-        .contact-icons {
-            display: flex;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .contact-icon-link {
-            background: var(--surface);
-            border-radius: 40px;
-            padding: 0.7rem 1.8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            text-decoration: none;
-            color: var(--text-main);
-            border: 1px solid var(--border-light);
-            transition: all var(--transition);
-        }
-        .contact-icon-link i {
-            font-size: 1.3rem;
-            color: var(--accent);
-        }
-        .contact-icon-link:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            background: var(--accent-light);
-            border-color: var(--accent);
-        }
-
-        /* tiny divider (asterisk) */
-        .custom-divider {
-            text-align: center;
-            margin: 2rem auto;
-            color: var(--accent);
-            opacity: 0.5;
-            font-size: 1rem;
-            letter-spacing: 4px;
-        }
-
-        /* loading pulse animation placeholder */
-        .pulse-loader {
-            width: 100%;
-            height: 60px;
-            background: var(--surface);
-            border-radius: 20px;
-            animation: pulseGlow 1.4s ease infinite;
-        }
-        @keyframes pulseGlow {
-            0% { opacity: 0.4; background: var(--border-light);}
-            50% { opacity: 0.8; background: var(--accent-light);}
-            100% { opacity: 0.4; background: var(--border-light);}
-        }
-
-        /* hidden sections + bouncy scroll (already smooth via css) */
-        .page-section {
-            display: none;
-            animation: fadeSlide 0.35s ease-out;
-        }
-        .active-section {
-            display: block;
-        }
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(12px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        .active-page {
-            color: var(--accent) !important;
-            font-weight: 600;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 4px;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 0 2.5rem;
-            border-top: none;
-            margin-top: 2rem;
-        }
-        .footer-note {
-            font-size: 0.75rem;
-            color: var(--text-soft);
-        }
-        @media (max-width: 700px) {
-            .container { padding: 0 1.2rem; }
-            .section-head { font-size: 1.5rem;}
-        }
-    </style>
-</head>
-<body>
-<div class="dot-bg"></div>
-
-<nav class="navbar">
-    <div class="container nav-inner">
-        <div class="logo">
-            <a href="#">Khong <span>Chun Kit</span></a>
-        </div>
-        <ul class="page-links">
-            <li><a href="#" data-page="knowme" class="nav-page active-page">Know Me</a></li>
-            <li><a href="#" data-page="projects" class="nav-page">Projects</a></li>
-            <li><a href="#" data-page="interests" class="nav-page">Interests</a></li>
-            <li><a href="#" data-page="contact" class="nav-page">Contact</a></li>
-            <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i> Dark</button></li>
-        </ul>
-    </div>
-</nav>
-
-<main class="container">
-    <!-- KNOW ME section (with company logos & stats count-up) -->
-    <section id="knowme" class="page-section active-section">
-        <div style="margin: 2rem 0 1rem;">
-            <div class="section-head">
-                <i class="fas fa-briefcase"></i> <!-- 💼 muted emoji via icon -->
-                <span>Where I've worked</span>
-            </div>
-            <p class="section-sub">Building products & experiences across tech, hospitality, agritech and education.</p>
-        </div>
-        
-        <!-- company chips (grayscale to color on hover) -->
-        <div class="companies-grid">
-            <div class="company-chip"><i class="fas fa-microchip"></i> Murata</div>
-            <div class="company-chip"><i class="fab fa-apple"></i> Apple</div>
-            <div class="company-chip"><i class="fas fa-fan"></i> Singapore Flyer</div>
-            <div class="company-chip"><i class="fas fa-leaf"></i> Gardens by the Bay</div>
-            <div class="company-chip"><i class="fas fa-seedling"></i> NUS Agritech</div>
-            <div class="company-chip"><i class="fas fa-chalkboard-user"></i> Singapore Polytechnic</div>
-            <div class="company-chip"><i class="fas fa-building"></i> [Placeholder Studio]</div>
-        </div>
-
-        <!-- stats row with count-up on scroll -->
-        <div class="stats-row">
-            <div class="stat-card" data-count="7">
-                <div class="stat-number" id="stat1">0</div>
-                <div class="stat-label">organizations</div>
-            </div>
-            <div class="stat-card" data-count="5">
-                <div class="stat-number" id="stat2">0</div>
-                <div class="stat-label">industries explored</div>
-            </div>
-            <div class="stat-card" data-count="12">
-                <div class="stat-number" id="stat3">0</div>
-                <div class="stat-label">projects shipped</div>
-            </div>
-        </div>
-        <div class="custom-divider">* * *</div>
-    </section>
-
-    <!-- PROJECTS section with card hover slide-in -->
-    <section id="projects" class="page-section">
-        <div style="margin: 2rem 0 1rem;">
-            <div class="section-head">
-                <i class="fas fa-tools"></i> <!-- 🛠️ muted -->
-                <span>Recent explorations</span>
-            </div>
-            <p class="section-sub">From sensor fusion to experience design — each project blends curiosity and craft.</p>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-microchip"></i></div>
-                <div class="project-title">Edge AI dashboard</div>
-                <div>Predictive maintenance for industrial IoT (Murata).</div>
-                <div class="read-more">Read more →</div>
-            </div>
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-tree"></i></div>
-                <div class="project-title">Cooling load optimizer</div>
-                <div>Gardens by the Bay – real-time environmental UI.</div>
-                <div class="read-more">Read more →</div>
-            </div>
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="project-title">Apple accessibility lab</div>
-                <div>Prototyping inclusive interactions.</div>
-                <div class="read-more">Read more →</div>
-            </div>
-            <div class="project-card">
-                <div class="project-icon"><i class="fas fa-tractor"></i></div>
-                <div class="project-title">Hydroponic monitor</div>
-                <div>NUS Agritech – crop health dashboard.</div>
-                <div class="read-more">Read more →</div>
-            </div>
-        </div>
-        <!-- placeholder for future images/videos: subtle pulse loading demo -->
-        <div class="pulse-loader" style="margin: 1rem 0; display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--text-soft);">
-            <i class="fas fa-images"></i> <span style="font-size: 0.75rem;">Images & videos arriving soon · subtle pulse</span>
-        </div>
-        <div class="custom-divider">⋯</div>
-    </section>
-
-    <!-- INTERESTS page -->
-    <section id="interests" class="page-section">
-        <div style="margin: 2rem 0 1rem;">
-            <div class="section-head">
-                <i class="fas fa-heart"></i> <!-- one muted emoji -->
-                <span>Off-duty rituals</span>
-            </div>
-            <p class="section-sub">Photography, traveller and foodie — capturing stories around the globe.</p>
-        </div>
-        <div class="interests-list">
-            <div class="interest-badge"><i class="fas fa-camera"></i> Photography</div>
-            <div class="interest-badge"><i class="fas fa-plane-departure"></i> Traveller</div>
-            <div class="interest-badge"><i class="fas fa-utensils"></i> Foodie</div>
-        </div>
-        <div style="margin-top: 1.8rem; background: var(--accent-glow); border-radius: 24px; padding: 1.2rem;">
-            <i class="fas fa-map-pin"></i> 20+ countries · street & documentary photography · hawker hunting
-        </div>
-        <div class="custom-divider">* * *</div>
-    </section>
-
-    <!-- CONTACT page -->
-    <section id="contact" class="page-section">
-        <div style="margin: 2rem 0 1rem;">
-            <div class="section-head">
-                <i class="fas fa-envelope"></i> <!-- 📬 -->
-                <span>Let's connect</span>
-            </div>
-            <p class="section-sub">Collaborations, coffee chats, or just to say hi — I’d love to hear from you.</p>
-        </div>
-        <div class="contact-icons">
-            <a href="#" class="contact-icon-link"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#" class="contact-icon-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-        </div>
-        <div style="margin-top: 1.2rem; font-size: 0.85rem; color: var(--text-soft);">
-            <i class="fas fa-map-marker-alt"></i> Singapore · available for freelance and creative collabs
-        </div>
-        <div class="custom-divider">⋯</div>
-    </section>
-</main>
-
-<footer>
-    <div class="container">
-        <div class="footer-note">Thanks for scrolling ✨ — built with warmth & light interactions</div>
-        <div class="footer-note" style="margin-top: 0.5rem;">© <span id="currentYear"></span> Khong Chun Kit (Kit)</div>
-    </div>
-</footer>
-
-<script>
-    // ---------- THEME + localstorage ----------
-    const toggleBtn = document.getElementById('themeToggle');
-    const body = document.body;
-    const storedTheme = localStorage.getItem('kit_theme_light');
-    if (storedTheme === 'dark') {
-        body.classList.add('dark');
-        toggleBtn.innerHTML = '<i class="fas fa-sun"></i> Light';
-    } else {
-        toggleBtn.innerHTML = '<i class="fas fa-moon"></i> Dark';
+    .vcard-grid {
+        grid-template-columns: 1fr;
+        padding: 24px;
     }
-    toggleBtn.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        const isDark = body.classList.contains('dark');
-        localStorage.setItem('kit_theme_light', isDark ? 'dark' : 'light');
-        toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i> Light' : '<i class="fas fa-moon"></i> Dark';
-    });
-
-    // ---------- page navigation with bouncy smooth scroll (already smooth scroll, but extra offset) ----------
-    const pages = ['knowme', 'projects', 'interests', 'contact'];
-    const sections = {
-        knowme: document.getElementById('knowme'),
-        projects: document.getElementById('projects'),
-        interests: document.getElementById('interests'),
-        contact: document.getElementById('contact')
-    };
-    const navLinks = document.querySelectorAll('.nav-page');
     
-    function activatePage(pageId) {
-        Object.values(sections).forEach(sec => sec?.classList.remove('active-section'));
-        if(sections[pageId]) sections[pageId].classList.add('active-section');
-        navLinks.forEach(link => {
-            const linkPage = link.getAttribute('data-page');
-            if (linkPage === pageId) link.classList.add('active-page');
-            else link.classList.remove('active-page');
-        });
-        // bouncy smooth scroll (small offset)
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    .features-grid {
+        grid-template-columns: 1fr;
     }
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const pageId = link.getAttribute('data-page');
-            if(pageId && sections[pageId]) {
-                activatePage(pageId);
-                history.pushState({ page: pageId }, '', `#${pageId}`);
-            }
-        });
-    });
-    const hash = window.location.hash.slice(1);
-    if (hash && pages.includes(hash)) activatePage(hash);
-    else activatePage('knowme');
-    window.addEventListener('popstate', (e) => {
-        const h = window.location.hash.slice(1);
-        if (h && pages.includes(h)) activatePage(h);
-        else activatePage('knowme');
-    });
-
-    // ---------- STATS COUNT-UP (Intersection Observer) ----------
-    const statNumbers = [
-        { element: document.getElementById('stat1'), target: 7, animated: false },
-        { element: document.getElementById('stat2'), target: 5, animated: false },
-        { element: document.getElementById('stat3'), target: 12, animated: false }
-    ];
-    function animateStat(statObj) {
-        if (statObj.animated) return;
-        statObj.animated = true;
-        let current = 0;
-        const step = Math.ceil(statObj.target / 25);
-        const interval = setInterval(() => {
-            current += step;
-            if (current >= statObj.target) {
-                statObj.element.innerText = statObj.target;
-                clearInterval(interval);
-            } else {
-                statObj.element.innerText = current;
-            }
-        }, 20);
+    
+    .section-title {
+        font-size: 1.75rem;
     }
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const parentCard = entry.target.closest('.stat-card');
-                if (parentCard) {
-                    const idx = Array.from(parentCard.parentNode.children).indexOf(parentCard);
-                    if (statNumbers[idx] && !statNumbers[idx].animated) animateStat(statNumbers[idx]);
-                }
-            }
-        });
-    }, { threshold: 0.4 });
-    document.querySelectorAll('.stat-card').forEach(card => observer.observe(card));
-
-    // ensure stats start at 0 but keep if already visible
-    if (document.querySelector('#knowme.active-section')) {
-        setTimeout(() => {
-            document.querySelectorAll('.stat-card').forEach((card, idx) => {
-                if (card.getBoundingClientRect().top < window.innerHeight) animateStat(statNumbers[idx]);
-            });
-        }, 200);
+    
+    .nav-links {
+        display: none;
     }
-
-    // extra interaction: no flying animations, only clean hover & read-more slide (already in CSS)
-    // footer year
-    document.getElementById('currentYear').innerText = new Date().getFullYear();
-
-    // add hover to non-clickable text? not needed; we follow the 'too much' rule, only cards.
-    // also divider asterisk already present.
-</script>
-</body>
-</html>
+}
