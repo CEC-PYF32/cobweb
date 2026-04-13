@@ -1,3 +1,5 @@
+Here is the updated HTML document that implements all your requested changes, including the refined career descriptions, updated navigation, dark blue accents, TikTok link, and improved layout spacing.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +27,10 @@
   --text-soft: #4A4A5A;
   --text-muted: #6B6B7B;
   --orange: #FF6B00;
+  --dark-blue: #0A2540;
   --orange-glow: rgba(255,107,0,0.12);
   --orange-dim: rgba(255,107,0,0.05);
+  --blue-dim: rgba(10,37,64,0.04);
   --shadow-sm: 0 4px 14px rgba(0,0,0,0.02);
   --shadow-md: 0 12px 28px rgba(0,0,0,0.06);
   --shadow-hover: 0 20px 32px -8px rgba(255,107,0,0.15);
@@ -41,6 +45,12 @@ body {
   color: var(--text-main);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Dark blue accents on text */
+.dark-blue-text {
+  color: var(--dark-blue);
+  font-weight: 500;
 }
 
 nav {
@@ -82,7 +92,8 @@ nav {
   color: var(--orange);
   border: 1px solid var(--border);
 }
-.nav-logo span { font-weight: 700; color: var(--orange); }
+.nav-logo .name-khong { font-weight: 500; }
+.nav-logo .name-kit { font-weight: 800; color: var(--orange); }
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -158,13 +169,13 @@ nav {
 .vcard-hero { padding: 2rem 0 1rem; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
 .avatar-ring { width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(var(--orange), #ff9a3c); padding: 3px; }
 .avatar-inner { width: 100%; height: 100%; border-radius: 50%; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--text-muted); }
-.vcard-name { font-size: clamp(2rem,5vw,3rem); font-weight: 700; }
-.vcard-name .orange { color: var(--orange); }
+.vcard-name { font-size: clamp(2rem,5vw,3rem); font-weight: 500; }
+.vcard-name .kit-bold { font-weight: 800; color: var(--orange); }
 .vcard-tagline { margin-top: 0.5rem; color: var(--text-soft); max-width: 32rem; }
 .vcard-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
 .chip { padding: 0.3rem 0.9rem; border-radius: 99px; font-size: 0.7rem; border: 1px solid var(--border); background: var(--surface); }
 
-/* Companies row - spread out */
+/* Companies row - Places I have made an impact */
 .orgs-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin: 2rem 0 1rem; }
 .org-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; width: 90px; padding: 0.8rem 0.2rem; border-radius: 20px; transition: all 0.2s; cursor: default; }
 .org-item i { font-size: 1.8rem; color: var(--text-muted); transition: 0.2s; }
@@ -179,29 +190,38 @@ nav {
 .vc-stat-num { font-size: 2rem; font-weight: 800; color: var(--orange); font-family: var(--mono); }
 .vc-stat-lbl { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; }
 
-/* Career & Education Two Columns */
+/* Background Two Columns */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
 @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
 .timeline-card { background: var(--bg); border: 1px solid var(--border); border-radius: 28px; padding: 1.8rem; }
-.timeline-card h3 { font-size: 1.4rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+.timeline-card h3 { font-size: 1.4rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.5rem; color: var(--dark-blue); }
 .timeline-card h3 i { color: var(--orange); }
-.timeline-item { margin-bottom: 1.8rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border); }
+.timeline-header { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange); margin-bottom: 0.5rem; }
+.timeline-item { margin-bottom: 2rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border); }
 .timeline-item:last-child { border-bottom: none; }
-.item-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
-.item-icon { width: 40px; height: 40px; background: var(--surface); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--orange); border: 1px solid var(--border); }
-.item-title { font-weight: 700; font-size: 1rem; }
-.item-sub { font-size: 0.8rem; color: var(--orange); font-weight: 500; }
+.item-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.item-icon { width: 44px; height: 44px; background: var(--surface); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--orange); border: 1px solid var(--border); flex-shrink: 0; }
+.item-title { font-weight: 700; font-size: 1rem; color: var(--dark-blue); }
+.item-sub { font-size: 0.8rem; color: var(--orange); font-weight: 600; margin-top: 0.1rem; }
 .item-date { font-size: 0.7rem; color: var(--text-muted); margin: 0.2rem 0 0.4rem; }
-.item-desc { font-size: 0.8rem; color: var(--text-soft); line-height: 1.6; margin-top: 0.3rem; padding-left: 0.5rem; border-left: 2px solid var(--orange-dim); }
+.item-desc { font-size: 0.8rem; color: var(--text-soft); line-height: 1.6; margin-top: 0.5rem; padding-left: 0.75rem; border-left: 2px solid var(--orange-dim); }
 .bullet-list { padding-left: 1rem; margin-top: 0.3rem; }
-.bullet-list li { font-size: 0.78rem; color: var(--text-soft); margin-bottom: 0.2rem; }
+.bullet-list li { font-size: 0.78rem; color: var(--text-soft); margin-bottom: 0.3rem; }
 
-/* Interests with dropdown photo */
+/* Projects Grid (renamed from Contact) */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.project-card { background: var(--bg); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; transition: all 0.2s; cursor: pointer; }
+.project-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.project-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.project-name { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.3rem; color: var(--dark-blue); }
+.project-desc { font-size: 0.8rem; color: var(--text-soft); }
+
+/* Interests with dropdown */
 .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
-.interest-card { background: var(--bg); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; cursor: pointer; transition: all 0.2s; position: relative; }
+.interest-card { background: var(--bg); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; cursor: pointer; transition: all 0.2s; }
 .interest-card:hover { border-color: var(--orange); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
 .interest-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
-.interest-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; }
+.interest-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; color: var(--dark-blue); }
 .interest-desc { font-size: 0.75rem; color: var(--text-soft); }
 
 /* Modal Popup */
@@ -246,12 +266,12 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="#"><div class="logo-placeholder"><i class="fas fa-code"></i></div> Khong <span>Chun Kit</span></a>
+    <a class="nav-logo" href="#"><div class="logo-placeholder"><i class="fas fa-code"></i></div> <span class="name-khong">Khong</span> <span class="name-kit">Chun Kit</span></a>
     <ul class="nav-links">
       <li><a href="#" data-pg="overview" class="nav-a active">Overview</a></li>
-      <li><a href="#" data-pg="career" class="nav-a">Career & Edu</a></li>
+      <li><a href="#" data-pg="background" class="nav-a">Background</a></li>
+      <li><a href="#" data-pg="projects" class="nav-a">Projects</a></li>
       <li><a href="#" data-pg="interests" class="nav-a">Interests</a></li>
-      <li><a href="#" data-pg="contact" class="nav-a">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -259,9 +279,10 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
 <div class="contact-bubble">
   <button class="bubble-btn" id="bubbleBtn"><i class="fas fa-envelope"></i></button>
   <div class="dropdown-contact" id="contactDropdown">
-    <a href="#" data-pg="contact"><i class="fas fa-paper-plane"></i> Contact page</a>
+    <a href="#" data-pg="projects"><i class="fas fa-folder-open"></i> Projects</a>
     <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     <a href="#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="#" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
     <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
   </div>
 </div>
@@ -272,7 +293,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
   <div class="vcard-hero">
     <div class="avatar-ring"><div class="avatar-inner"><i class="fas fa-user-astronaut"></i></div></div>
     <div>
-      <h1 class="vcard-name">Khong <span class="orange">Chun Kit</span></h1>
+      <h1 class="vcard-name">Khong <span class="kit-bold">Chun Kit</span></h1>
       <p class="vcard-tagline">Builder across tech, hospitality, attractions & education. I turn messy problems into clean products — from factory floors to visitor experiences.</p>
       <div class="vcard-chips">
         <span class="chip"><i class="fas fa-microchip"></i> Electronics & IoT</span>
@@ -288,11 +309,12 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
     <div class="vc-stat"><div class="vc-stat-num" data-target="14">0</div><div class="vc-stat-lbl">Projects</div></div>
   </div>
 
-  <!-- Companies row spread with icons -->
+  <!-- Places I have made an impact -->
+  <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--dark-blue);"><i class="fas fa-star" style="color:var(--orange);"></i> Places I have made an impact</h3>
   <div class="orgs-row">
     <div class="org-item"><i class="fas fa-microchip"></i><span>Murata</span></div>
     <div class="org-item"><i class="fab fa-apple"></i><span>Apple</span></div>
-    <div class="org-item"><i class="fas fa-fan"></i><span>Singapore Flyer</span></div>
+    <div class="org-item"><i class="fas fa-ferris-wheel"></i><span>Singapore Flyer</span></div>
     <div class="org-item"><i class="fas fa-seedling"></i><span>Gardens by the Bay</span></div>
     <div class="org-item"><i class="fas fa-university"></i><span>NUS Agritech Centre</span></div>
     <div class="org-item"><i class="fas fa-chalkboard-user"></i><span>Singapore Poly</span></div>
@@ -301,115 +323,212 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
 </div>
 </section>
 
-<!-- CAREER & EDUCATION PAGE (two columns) -->
-<section id="pg-career" class="pg">
+<!-- BACKGROUND (Career & Education) -->
+<section id="pg-background" class="pg">
 <div class="wrap">
   <div style="margin: 1rem 0 2rem;">
-    <p class="section-eyebrow" style="font-size:0.7rem; color:var(--orange); text-transform:uppercase;">Timeline</p>
-    <h2 style="font-size:1.8rem;">Experience & learning</h2>
+    <div class="timeline-header">TIMELINE</div>
+    <h2 style="font-size:1.8rem; color:var(--dark-blue);">Background</h2>
   </div>
   <div class="two-col">
     <!-- LEFT: CAREER -->
     <div class="timeline-card">
       <h3><i class="fas fa-briefcase"></i> Career</h3>
       
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-microchip"></i></div><div><div class="item-title">Product Marketing Engineer</div><div class="item-sub">Murata</div><div class="item-date">Apr 2026 – Present · 1 mo</div></div></div><div class="item-desc">Driving product marketing strategies for sensor solutions.</div></div>
+      <div class="timeline-item">
+        <div class="item-header">
+          <div class="item-icon"><i class="fas fa-microchip"></i></div>
+          <div>
+            <div class="item-title">Product Marketing Engineer</div>
+            <div class="item-sub">Murata</div>
+            <div class="item-date">Apr 2026 – Present</div>
+          </div>
+        </div>
+        <div class="item-desc">
+          <ul class="bullet-list">
+            <li><strong class="dark-blue-text">Pricing Specialist</strong> — Managed pricing strategy for all wireless communication modules across ASEAN & Oceania</li>
+            <li><strong class="dark-blue-text">Market Expansion</strong> — Researched ASEAN and Australian markets to identify target customers and promote wireless technology adoption</li>
+            <li><strong class="dark-blue-text">Technical Bridge</strong> — Served as the strategic liaison between engineering and commercial teams, translating technical capabilities into business value propositions</li>
+            <li><strong class="dark-blue-text">Strategic Sourcing</strong> — Identified and onboarded enterprise clients for wireless technology deployment across industrial and consumer segments</li>
+          </ul>
+        </div>
+      </div>
       
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fab fa-apple"></i></div><div><div class="item-title">Product Specialist</div><div class="item-sub">Apple</div><div class="item-date">Aug 2025 – Apr 2026 · 9 mos</div><div class="item-sub" style="color:var(--text-muted);">Apple Marina Bay Sands</div></div></div><div class="item-desc"><ul class="bullet-list"><li>Embodied Apple's values in every customer interaction while achieving top-tier commercial KPIs under pressure</li><li>Coordinated seamlessly with Apple Business for corporate setups and Apple Genius Bar for device servicing</li><li>Contributed to cross-functional product launch initiatives, including Apple Intelligence showcase and Today@Apple</li></ul></div></div>
+      <div class="timeline-item">
+        <div class="item-header">
+          <div class="item-icon"><i class="fab fa-apple"></i></div>
+          <div>
+            <div class="item-title">Product Specialist</div>
+            <div class="item-sub">Apple</div>
+            <div class="item-date">Aug 2025 – Apr 2026 · 9 mos</div>
+            <div class="item-sub" style="color:var(--text-muted);">Apple Marina Bay Sands</div>
+          </div>
+        </div>
+        <div class="item-desc">
+          <ul class="bullet-list">
+            <li><strong class="dark-blue-text">B2C Excellence</strong> — Embodied Apple's values in every customer interaction while achieving top-tier commercial KPIs under pressure</li>
+            <li><strong class="dark-blue-text">B2B Engagement</strong> — Coordinated with Apple Business Team for corporate setups and Apple Genius Bar for device servicing</li>
+            <li><strong class="dark-blue-text">Cross-Functional Launch</strong> — Contributed to product launch initiatives including Apple Intelligence showcase and Today@Apple</li>
+            <li><strong class="dark-blue-text">Website Development</strong> — Designed and coded portfolio website from scratch using HTML/CSS/JS on GitHub</li>
+          </ul>
+        </div>
+      </div>
       
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-fan"></i></div><div><div class="item-title">Operations & Ticketing</div><div class="item-sub">Singapore Flyer</div><div class="item-date">Jun 2025 – Aug 2025 · 3 mos</div></div></div><div class="item-desc">- Personal escort for private flights and ticketing staff recommending personalised packages for guests</div></div>
+      <div class="timeline-item">
+        <div class="item-header">
+          <div class="item-icon"><i class="fas fa-ferris-wheel"></i></div>
+          <div>
+            <div class="item-title">Operations & Ticketing</div>
+            <div class="item-sub">Singapore Flyer</div>
+            <div class="item-date">Jun 2025 – Aug 2025 · 3 mos</div>
+          </div>
+        </div>
+        <div class="item-desc">Personal escort for private flights and ticketing staff — recommended personalised packages for guests</div>
+      </div>
       
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-seedling"></i></div><div><div class="item-title">Artificial Intelligence Researcher</div><div class="item-sub">NUS Agritech Centre (NAC) · Internship</div><div class="item-date">Aug 2024 – May 2025 · 10 mos</div></div></div><div class="item-desc"><ul class="bullet-list"><li>Pioneered an end-to-end ML forecasting system that autonomously determines ideal environmental conditions for optimal plant growth</li><li>Engineered seamless IoT data pipeline architecting cloud-based Python code linking Azure ML, IoT Hub, and ESP32 cameras</li><li>Designed centralized data ecosystem with Excel-SQL database interface for real-time analytics</li></ul></div></div>
+      <div class="timeline-item">
+        <div class="item-header">
+          <div class="item-icon"><i class="fas fa-seedling"></i></div>
+          <div>
+            <div class="item-title">Artificial Intelligence Researcher</div>
+            <div class="item-sub">NUS Agritech Centre (NAC) · Internship</div>
+            <div class="item-date">Aug 2024 – May 2025 · 10 mos</div>
+          </div>
+        </div>
+        <div class="item-desc">
+          <ul class="bullet-list">
+            <li>Pioneered end-to-end ML forecasting system that autonomously determines ideal environmental conditions for optimal plant growth</li>
+            <li>Engineered seamless IoT data pipeline architecting cloud-based Python code linking Azure ML, IoT Hub, and ESP32 cameras</li>
+            <li>Designed centralized data ecosystem with Excel-SQL database interface for real-time analytics</li>
+          </ul>
+        </div>
+      </div>
       
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-leaf"></i></div><div><div class="item-title">Operations</div><div class="item-sub">Gardens by the Bay</div><div class="item-date">Jun 2024 – Oct 2024 · 5 mos</div></div></div><div class="item-desc">- Ticketing and Admission: efficient ticket verification<br>- Team leader: facilitating events and programs</div></div>
+      <div class="timeline-item">
+        <div class="item-header">
+          <div class="item-icon"><i class="fas fa-leaf"></i></div>
+          <div>
+            <div class="item-title">Operations</div>
+            <div class="item-sub">Gardens by the Bay</div>
+            <div class="item-date">Jun 2024 – Oct 2024 · 5 mos</div>
+          </div>
+        </div>
+        <div class="item-desc">Ticketing and admission verification · Team leader facilitating events and programs</div>
+      </div>
       
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-shield-alt"></i></div><div><div class="item-title">Medical Assistant / Automotive Engineer</div><div class="item-sub">Ministry of Defence of Singapore</div><div class="item-date">Feb 2021 – Jul 2022 · 1 yr 6 mos</div></div></div><div class="item-desc">Developed patient data systems, coordinated with medical institutions. Automotive engineer at Nee Soon Driclad Centre: optimised vehicle performance.</div></div>
+      <div class="timeline-item">
+        <div class="item-header">
+          <div class="item-icon"><i class="fas fa-shield-alt"></i></div>
+          <div>
+            <div class="item-title">Medical Assistant / Automotive Engineer</div>
+            <div class="item-sub">Ministry of Defence of Singapore</div>
+            <div class="item-date">Feb 2021 – Jul 2022 · 1 yr 6 mos</div>
+          </div>
+        </div>
+        <div class="item-desc">Developed patient data systems, coordinated with medical institutions. Automotive engineer: optimised vehicle performance at Nee Soon Driclad Centre.</div>
+      </div>
       
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-microchip"></i></div><div><div class="item-title">IoT Engineer (Internship)</div><div class="item-sub">Singapore Polytechnic, TIE</div><div class="item-date">Jan 2019 – Oct 2019 · 10 mos</div></div></div><div class="item-desc">Co-created data streaming service, mobile/watch UI/UX design, biomedical sensors, photography for corporate media.</div></div>
+      <div class="timeline-item">
+        <div class="item-header">
+          <div class="item-icon"><i class="fas fa-microchip"></i></div>
+          <div>
+            <div class="item-title">IoT Engineer (Internship)</div>
+            <div class="item-sub">Singapore Polytechnic, TIE</div>
+            <div class="item-date">Jan 2019 – Oct 2019 · 10 mos</div>
+          </div>
+        </div>
+        <div class="item-desc">Co-created data streaming service, mobile/watch UI/UX design, biomedical sensors, photography for corporate media</div>
+      </div>
       
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-mobile-alt"></i></div><div><div class="item-title">Product Designer</div><div class="item-sub">“Holiplans” Project – SP Entrepreneurship</div><div class="item-date">Oct 2018 – Mar 2019 · 6 mos</div></div></div><div class="item-desc">Led end-to-end design of itinerary planning app, design thinking, Figma prototypes, Wix deployment.</div></div>
+      <div class="timeline-item">
+        <div class="item-header">
+          <div class="item-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div>
+            <div class="item-title">Product Designer</div>
+            <div class="item-sub">“Holiplans” Project – SP Entrepreneurship</div>
+            <div class="item-date">Oct 2018 – Mar 2019 · 6 mos</div>
+          </div>
+        </div>
+        <div class="item-desc">Led end-to-end design of itinerary planning app using design thinking, Figma prototypes, Wix deployment</div>
+      </div>
     </div>
     
     <!-- RIGHT: EDUCATION -->
     <div class="timeline-card">
       <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-university"></i></div><div><div class="item-title">National University of Singapore</div><div class="item-sub">BEng (Electrical Eng) (Hons)</div><div class="item-date">Aug 2022 – Jul 2026</div></div></div><div class="item-desc">Activities: NUS iCare, Pioneer House Resident, Japanese Studies Society. Skills: Data Analytics, AI.</div></div>
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-globe"></i></div><div><div class="item-title">Zhengzhou University</div><div class="item-sub">Summer Exchange: Central China Culture</div><div class="item-date">Jul 2024 – Aug 2024</div></div></div><div class="item-desc">Confucianism, traditional arts, language, history, medicine. Cultural immersion in Anyang & Luoyang.</div></div>
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-leaf"></i></div><div><div class="item-title">Universitas Airlangga</div><div class="item-sub">Leadership in Sustainability and Culture</div><div class="item-date">May 2023 – Jul 2023</div></div></div><div class="item-desc">Indonesia SDGs focus, meeting East Java's Vice Governor, site visit to Brenjonk Village.</div></div>
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-chart-line"></i></div><div><div class="item-title">Nanyang Technological University</div><div class="item-sub">PaCE@NTU Economics</div><div class="item-date">May 2022 – Jul 2022</div></div></div><div class="item-desc">In-depth analysis of contemporary economic issues (Egypt's trade, Singapore's inflation).</div></div>
-      <div class="timeline-item"><div class="item-header"><div class="item-icon"><i class="fas fa-microchip"></i></div><div><div class="item-title">Singapore Polytechnic</div><div class="item-sub">Diploma, Electrical and Electronics Engineering</div><div class="item-date">Apr 2017 – Apr 2020</div></div></div><div class="item-desc">Activities: SP Student Exchange Club, SP Makers Club, SP Red Cross, Japanese Cultural Club.</div></div>
+      <div class="timeline-item">
+        <div class="item-header"><div class="item-icon"><i class="fas fa-university"></i></div><div><div class="item-title">National University of Singapore</div><div class="item-sub">BEng (Electrical Eng) (Hons)</div><div class="item-date">Aug 2022 – Jul 2026</div></div></div>
+        <div class="item-desc">Activities: NUS iCare, Pioneer House Resident, Japanese Studies Society. Skills: Data Analytics, AI.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="item-header"><div class="item-icon"><i class="fas fa-globe"></i></div><div><div class="item-title">Zhengzhou University</div><div class="item-sub">Summer Exchange: Central China Culture</div><div class="item-date">Jul 2024 – Aug 2024</div></div></div>
+        <div class="item-desc">Confucianism, traditional arts, language, history, medicine. Cultural immersion in Anyang & Luoyang.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="item-header"><div class="item-icon"><i class="fas fa-leaf"></i></div><div><div class="item-title">Universitas Airlangga</div><div class="item-sub">Summer Exchange: Leadership in Sustainability and Culture</div><div class="item-date">May 2023 – Jul 2023</div></div></div>
+        <div class="item-desc">Indonesia SDGs focus, meeting East Java's Vice Governor, site visit to Brenjonk Village.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="item-header"><div class="item-icon"><i class="fas fa-chart-line"></i></div><div><div class="item-title">Nanyang Technological University</div><div class="item-sub">PaCE@NTU Economics</div><div class="item-date">May 2022 – Jul 2022</div></div></div>
+        <div class="item-desc">In-depth analysis of contemporary economic issues (Egypt's trade, Singapore's inflation).</div>
+      </div>
+      <div class="timeline-item">
+        <div class="item-header"><div class="item-icon"><i class="fas fa-microchip"></i></div><div><div class="item-title">Singapore Polytechnic</div><div class="item-sub">Diploma, Electrical and Electronics Engineering</div><div class="item-date">Apr 2017 – Apr 2020</div></div></div>
+        <div class="item-desc">Activities: SP Student Exchange Club, SP Makers Club, SP Red Cross, Japanese Cultural Club.</div>
+      </div>
     </div>
   </div>
 </div>
 </section>
 
-<!-- INTERESTS (merged Photography + Travel, dropdown on click) -->
+<!-- PROJECTS PAGE (renamed from Contact) -->
+<section id="pg-projects" class="pg">
+<div class="wrap">
+  <div style="margin: 1rem 0 2rem;">
+    <div class="timeline-header">FEATURED</div>
+    <h2 style="font-size:1.8rem; color:var(--dark-blue);">Projects</h2>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card"><div class="project-icon">📊</div><div class="project-name">Edge AI Dashboard</div><div class="project-desc">Predictive maintenance for industrial IoT sensors (Murata). Real-time anomaly detection.</div></div>
+    <div class="project-card"><div class="project-icon">🌿</div><div class="project-name">Cooling Load Optimizer</div><div class="project-desc">Gardens by the Bay — real-time environmental UI for climate management.</div></div>
+    <div class="project-card"><div class="project-icon">♿</div><div class="project-name">Accessibility Lab</div><div class="project-desc">Apple — prototyping inclusive interaction patterns for assistive tech.</div></div>
+    <div class="project-card"><div class="project-icon">🌱</div><div class="project-name">Hydroponic Monitor</div><div class="project-desc">NUS Agritech — crop health dashboard & yield forecasting.</div></div>
+    <div class="project-card"><div class="project-icon">🏎️</div><div class="project-name">Pit Wall Telemetry</div><div class="project-desc">F1 analytics suite: driver comparison, corner delta, tyre degradation.</div></div>
+    <div class="project-card"><div class="project-icon">💻</div><div class="project-name">Portfolio Website</div><div class="project-desc">Custom-built from scratch with HTML/CSS/JS, dark blue accents, responsive design.</div></div>
+  </div>
+  <div style="margin-top: 2rem; text-align: center;">
+    <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+      <a href="#" class="vc-link" style="display:inline-flex; gap:0.5rem; padding:0.6rem 1.2rem; border:1px solid var(--border); border-radius:99px; text-decoration:none; color:var(--text-main);"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      <a href="#" class="vc-link" style="display:inline-flex; gap:0.5rem; padding:0.6rem 1.2rem; border:1px solid var(--border); border-radius:99px; text-decoration:none; color:var(--text-main);"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="#" class="vc-link" style="display:inline-flex; gap:0.5rem; padding:0.6rem 1.2rem; border:1px solid var(--border); border-radius:99px; text-decoration:none; color:var(--text-main);"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="#" class="vc-link" style="display:inline-flex; gap:0.5rem; padding:0.6rem 1.2rem; border:1px solid var(--border); border-radius:99px; text-decoration:none; color:var(--text-main);"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- INTERESTS -->
 <section id="pg-interests" class="pg">
 <div class="wrap">
   <div style="margin: 1rem 0 2rem;">
-    <h2 style="font-size:1.8rem;">Off-duty rituals</h2>
+    <h2 style="font-size:1.8rem; color:var(--dark-blue);">Off-duty rituals</h2>
   </div>
   <div class="interests-grid">
-    <div class="interest-card" data-modal="photoModal">
-      <div class="interest-icon">📷✈️</div>
-      <div class="interest-name">Photography & Travel</div>
-      <div class="interest-desc">Street & documentary — 20+ countries. Click to view gallery placeholders.</div>
-    </div>
-    <div class="interest-card" data-modal="foodModal">
-      <div class="interest-icon">🍜</div>
-      <div class="interest-name">Foodie</div>
-      <div class="interest-desc">Hawker hunting, from $3 wonton mee to omakase.</div>
-    </div>
-    <div class="interest-card" data-modal="f1Modal">
-      <div class="interest-icon">🏎️</div>
-      <div class="interest-name">F1 & Telemetry</div>
-      <div class="interest-desc">Built my own pit wall analytics suite.</div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- CONTACT PAGE -->
-<section id="pg-contact" class="pg">
-<div class="wrap">
-  <div style="text-align: center; padding: 3rem 0;">
-    <h2 style="font-size: 2.5rem;">Let's <span style="color:var(--orange);">connect.</span></h2>
-    <p style="color: var(--text-soft); margin: 1rem auto; max-width: 400px;">Collaborations, coffee chats, or just to say hi.</p>
-    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin: 2rem 0;">
-      <a href="#" class="vc-link" style="display:inline-flex; gap:0.5rem; padding:0.6rem 1.2rem; border:1px solid var(--border); border-radius:99px;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-      <a href="#" class="vc-link" style="display:inline-flex; gap:0.5rem; padding:0.6rem 1.2rem; border:1px solid var(--border); border-radius:99px;"><i class="fab fa-instagram"></i> Instagram</a>
-      <a href="#" class="vc-link" style="display:inline-flex; gap:0.5rem; padding:0.6rem 1.2rem; border:1px solid var(--border); border-radius:99px;"><i class="fab fa-github"></i> GitHub</a>
-    </div>
-    <div style="margin-top: 2rem; padding: 1rem; border:1px solid var(--border); border-radius: 24px; max-width: 300px; margin-left: auto; margin-right: auto;"><i class="fas fa-map-marker-alt"></i> Singapore · GMT+8</div>
+    <div class="interest-card" data-modal="photoModal"><div class="interest-icon">📷✈️</div><div class="interest-name">Photography & Travel</div><div class="interest-desc">Street & documentary — 20+ countries. Click to view gallery.</div></div>
+    <div class="interest-card" data-modal="foodModal"><div class="interest-icon">🍜</div><div class="interest-name">Foodie</div><div class="interest-desc">Hawker hunting, from $3 wonton mee to omakase.</div></div>
+    <div class="interest-card" data-modal="f1Modal"><div class="interest-icon">🏎️</div><div class="interest-name">F1 & Telemetry</div><div class="interest-desc">Built my own pit wall analytics suite.</div></div>
   </div>
 </div>
 </section>
 
 <footer>© 2025 Khong Chun Kit · built with care</footer>
 
-<!-- MODAL for photo popup -->
-<div id="photoModal" class="modal">
-  <div class="modal-content">
-    <span class="modal-close">&times;</span>
-    <h3>📸 Photography & Travel</h3>
-    <p style="margin-bottom: 1rem; font-size: 0.8rem;">Placeholder gallery — images coming soon</p>
-    <div class="photo-grid">
-      <div class="photo-placeholder"><i class="fas fa-image"></i> Tokyo street</div>
-      <div class="photo-placeholder"><i class="fas fa-image"></i> Hawker centre</div>
-      <div class="photo-placeholder"><i class="fas fa-image"></i> Gardens by the Bay</div>
-      <div class="photo-placeholder"><i class="fas fa-image"></i> Train in Kyoto</div>
-    </div>
-  </div>
-</div>
-<div id="foodModal" class="modal">
-  <div class="modal-content"><span class="modal-close">&times;</span><h3>🍜 Foodie moments</h3><div class="photo-grid"><div class="photo-placeholder">Chili crab</div><div class="photo-placeholder">Laksa</div><div class="photo-placeholder">Sushi omakase</div><div class="photo-placeholder">Wonton mee</div></div></div>
-</div>
-<div id="f1Modal" class="modal">
-  <div class="modal-content"><span class="modal-close">&times;</span><h3>🏎️ F1 Telemetry</h3><div class="photo-grid"><div class="photo-placeholder">Pit wall UI mock</div><div class="photo-placeholder">Lap time comparison</div><div class="photo-placeholder">Telemetry traces</div><div class="photo-placeholder">Circuit map</div></div></div>
-</div>
+<!-- MODALS -->
+<div id="photoModal" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h3>📸 Photography & Travel</h3><p style="margin-bottom:1rem; font-size:0.8rem;">Gallery placeholders — images coming soon</p><div class="photo-grid"><div class="photo-placeholder">Tokyo street</div><div class="photo-placeholder">Hawker centre</div><div class="photo-placeholder">Gardens by the Bay</div><div class="photo-placeholder">Train in Kyoto</div></div></div></div>
+<div id="foodModal" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h3>🍜 Foodie moments</h3><div class="photo-grid"><div class="photo-placeholder">Chili crab</div><div class="photo-placeholder">Laksa</div><div class="photo-placeholder">Sushi omakase</div><div class="photo-placeholder">Wonton mee</div></div></div></div>
+<div id="f1Modal" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h3>🏎️ F1 Telemetry</h3><div class="photo-grid"><div class="photo-placeholder">Pit wall UI</div><div class="photo-placeholder">Lap comparison</div><div class="photo-placeholder">Telemetry traces</div><div class="photo-placeholder">Circuit map</div></div></div></div>
 
 <script>
-// Page navigation
 function showPage(id) {
   document.querySelectorAll('.pg').forEach(p => p.classList.remove('show'));
   document.getElementById(`pg-${id}`).classList.add('show');
@@ -427,7 +546,6 @@ document.querySelectorAll('[data-pg]').forEach(el => {
   });
 });
 
-// Stats counter
 function runStats() {
   document.querySelectorAll('.vc-stat-num').forEach(el => {
     if (el.dataset.done) return;
@@ -443,13 +561,11 @@ function runStats() {
   });
 }
 
-// Bubble dropdown
 const bubbleBtn = document.getElementById('bubbleBtn');
 const dropdown = document.getElementById('contactDropdown');
 bubbleBtn?.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('show'); });
 document.addEventListener('click', (e) => { if (!bubbleBtn?.contains(e.target) && !dropdown?.contains(e.target)) dropdown?.classList.remove('show'); });
 
-// Modal logic for interest cards
 const modals = document.querySelectorAll('.modal');
 document.querySelectorAll('.interest-card').forEach(card => {
   card.addEventListener('click', () => {
@@ -459,9 +575,7 @@ document.querySelectorAll('.interest-card').forEach(card => {
   });
 });
 document.querySelectorAll('.modal-close').forEach(closeBtn => {
-  closeBtn.addEventListener('click', () => {
-    closeBtn.closest('.modal').style.display = 'none';
-  });
+  closeBtn.addEventListener('click', () => { closeBtn.closest('.modal').style.display = 'none'; });
 });
 window.addEventListener('click', (e) => { modals.forEach(m => { if (e.target === m) m.style.display = 'none'; }); });
 
@@ -469,3 +583,4 @@ showPage('overview');
 </script>
 </body>
 </html>
+```
