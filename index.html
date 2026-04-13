@@ -1,5 +1,3 @@
-Here is the updated HTML document that implements all your requested changes, including the refined career descriptions, updated navigation, dark blue accents, TikTok link, and improved layout spacing.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,10 +176,10 @@ nav {
 /* Companies row - Places I have made an impact */
 .orgs-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; margin: 2rem 0 1rem; }
 .org-item { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; width: 90px; padding: 0.8rem 0.2rem; border-radius: 20px; transition: all 0.2s; cursor: default; }
-.org-item i { font-size: 1.8rem; color: var(--text-muted); transition: 0.2s; }
+.org-item i, .org-item .org-emoji { font-size: 1.8rem; color: var(--text-muted); transition: 0.2s; }
 .org-item span { font-size: 0.65rem; text-align: center; color: var(--text-muted); font-weight: 500; }
 .org-item:hover { background: var(--orange-dim); transform: translateY(-3px); }
-.org-item:hover i { color: var(--orange); }
+.org-item:hover i, .org-item:hover .org-emoji { color: var(--orange); }
 .org-item:hover span { color: var(--orange); }
 
 /* Stats */
@@ -208,7 +206,7 @@ nav {
 .bullet-list { padding-left: 1rem; margin-top: 0.3rem; }
 .bullet-list li { font-size: 0.78rem; color: var(--text-soft); margin-bottom: 0.3rem; }
 
-/* Projects Grid (renamed from Contact) */
+/* Projects Grid */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
 .project-card { background: var(--bg); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; transition: all 0.2s; cursor: pointer; }
 .project-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: var(--shadow-hover); }
@@ -216,15 +214,7 @@ nav {
 .project-name { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.3rem; color: var(--dark-blue); }
 .project-desc { font-size: 0.8rem; color: var(--text-soft); }
 
-/* Interests with dropdown */
-.interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
-.interest-card { background: var(--bg); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; cursor: pointer; transition: all 0.2s; }
-.interest-card:hover { border-color: var(--orange); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
-.interest-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
-.interest-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; color: var(--dark-blue); }
-.interest-desc { font-size: 0.75rem; color: var(--text-soft); }
-
-/* Modal Popup */
+/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -255,6 +245,84 @@ nav {
 .photo-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.8rem; margin-top: 1rem; }
 .photo-placeholder { background: var(--surface); border-radius: 16px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.7rem; border: 1px dashed var(--border); }
 
+/* Project Modal Specific Styles */
+.project-modal-content {
+    background: var(--bg);
+    max-width: 550px;
+    width: 90%;
+    border-radius: 32px;
+    padding: 1.8rem;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+.project-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.project-modal-icon {
+    font-size: 2rem;
+}
+.project-modal-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+.project-modal-subtitle {
+    font-size: 0.8rem;
+    color: var(--orange);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.project-modal-desc {
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+.project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+.project-tech-tag {
+    background: var(--orange-dim);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--orange);
+}
+.project-placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+.project-placeholder {
+    background: var(--surface);
+    border-radius: 16px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    border: 1px dashed var(--border);
+}
+
+/* Interests */
+.interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
+.interest-card { background: var(--bg); border: 1px solid var(--border); border-radius: 24px; padding: 1.5rem; cursor: pointer; transition: all 0.2s; }
+.interest-card:hover { border-color: var(--orange); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+.interest-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.interest-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.2rem; color: var(--dark-blue); }
+.interest-desc { font-size: 0.75rem; color: var(--text-soft); }
+
 /* Footer */
 footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 2rem; }
 
@@ -266,7 +334,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="#"><div class="logo-placeholder"><i class="fas fa-code"></i></div> <span class="name-khong">Khong Chun</span> <span class="name-kit"> Kit</span></a>
+    <a class="nav-logo" href="#"><div class="logo-placeholder"><i class="fas fa-code"></i></div> <span class="name-khong">Khong Chun</span> <span class="name-kit">Kit</span></a>
     <ul class="nav-links">
       <li><a href="#" data-pg="overview" class="nav-a active">Overview</a></li>
       <li><a href="#" data-pg="background" class="nav-a">Background</a></li>
@@ -314,7 +382,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
   <div class="orgs-row">
     <div class="org-item"><i class="fas fa-microchip"></i><span>Murata</span></div>
     <div class="org-item"><i class="fab fa-apple"></i><span>Apple</span></div>
-    <div class="org-item"><span style="font-size: 1.8rem;">🎡</span><span>Singapore Flyer</span></div>
+    <div class="org-item"><span class="org-emoji">🎡</span><span>Singapore Flyer</span></div>
     <div class="org-item"><i class="fas fa-seedling"></i><span>Gardens by the Bay</span></div>
     <div class="org-item"><i class="fas fa-university"></i><span>NUS Agritech Centre</span></div>
     <div class="org-item"><i class="fas fa-chalkboard-user"></i><span>Singapore Poly</span></div>
@@ -376,7 +444,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
       
       <div class="timeline-item">
         <div class="item-header">
-          <div class="item-icon"><i class="fas fa-ferris-wheel"></i></div>
+          <div class="item-icon"><span style="font-size:1.2rem;">🎡</span></div>
           <div>
             <div class="item-title">Operations & Ticketing</div>
             <div class="item-sub">Singapore Flyer</div>
@@ -420,21 +488,9 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
         <div class="item-header">
           <div class="item-icon"><i class="fas fa-shield-alt"></i></div>
           <div>
-            <div class="item-title">Medical Assistant </div>
+            <div class="item-title">Medical Assistant / Automotive Engineer</div>
             <div class="item-sub">Ministry of Defence of Singapore</div>
             <div class="item-date">Feb 2021 – Jul 2022 · 1 yr 6 mos</div>
-          </div>
-        </div>
-        <div class="item-desc">Developed patient data systems, coordinated with medical institutions. Automotive engineer: optimised vehicle performance at Nee Soon Driclad Centre.</div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="item-header">
-          <div class="item-icon"><i class="fas fa-shield-alt"></i></div>
-          <div>
-            <div class="item-title">Automotive Engineer</div>
-            <div class="item-sub">Ministry of Defence of Singapore</div>
-            <div class="item-date">Sep 2020 - Feb 2021 · 6 mos</div>
           </div>
         </div>
         <div class="item-desc">Developed patient data systems, coordinated with medical institutions. Automotive engineer: optimised vehicle performance at Nee Soon Driclad Centre.</div>
@@ -445,7 +501,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
           <div class="item-icon"><i class="fas fa-microchip"></i></div>
           <div>
             <div class="item-title">IoT Engineer (Internship)</div>
-            <div class="item-sub">SP Technology Innovation Enterprise Internship</div>
+            <div class="item-sub">Singapore Polytechnic, TIE</div>
             <div class="item-date">Jan 2019 – Oct 2019 · 10 mos</div>
           </div>
         </div>
@@ -457,7 +513,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
           <div class="item-icon"><i class="fas fa-mobile-alt"></i></div>
           <div>
             <div class="item-title">Product Designer</div>
-            <div class="item-sub">“Holiplans” Project, SP Entrepreneurship Internship </div>
+            <div class="item-sub">“Holiplans” Project – SP Entrepreneurship</div>
             <div class="item-date">Oct 2018 – Mar 2019 · 6 mos</div>
           </div>
         </div>
@@ -493,7 +549,7 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
 </div>
 </section>
 
-<!-- PROJECTS PAGE (renamed from Contact) -->
+<!-- PROJECTS PAGE -->
 <section id="pg-projects" class="pg">
 <div class="wrap">
   <div style="margin: 1rem 0 2rem;">
@@ -501,12 +557,12 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
     <h2 style="font-size:1.8rem; color:var(--dark-blue);">Projects</h2>
   </div>
   <div class="projects-grid">
-    <div class="project-card"><div class="project-icon">📊</div><div class="project-name">Edge AI Dashboard</div><div class="project-desc">Predictive maintenance for industrial IoT sensors (Murata). Real-time anomaly detection.</div></div>
-    <div class="project-card"><div class="project-icon">🌿</div><div class="project-name">Cooling Load Optimizer</div><div class="project-desc">Gardens by the Bay — real-time environmental UI for climate management.</div></div>
-    <div class="project-card"><div class="project-icon">♿</div><div class="project-name">Accessibility Lab</div><div class="project-desc">Apple — prototyping inclusive interaction patterns for assistive tech.</div></div>
-    <div class="project-card"><div class="project-icon">🌱</div><div class="project-name">Hydroponic Monitor</div><div class="project-desc">NUS Agritech — crop health dashboard & yield forecasting.</div></div>
-    <div class="project-card"><div class="project-icon">🏎️</div><div class="project-name">Pit Wall Telemetry</div><div class="project-desc">F1 analytics suite: driver comparison, corner delta, tyre degradation.</div></div>
-    <div class="project-card"><div class="project-icon">💻</div><div class="project-name">Portfolio Website</div><div class="project-desc">Custom-built from scratch with HTML/CSS/JS, dark blue accents, responsive design.</div></div>
+    <div class="project-card" data-project="1"><div class="project-icon">📊</div><div class="project-name">Edge AI Dashboard</div><div class="project-desc">Predictive maintenance for industrial IoT sensors (Murata).</div></div>
+    <div class="project-card" data-project="2"><div class="project-icon">🌿</div><div class="project-name">Cooling Load Optimizer</div><div class="project-desc">Gardens by the Bay — real-time environmental UI.</div></div>
+    <div class="project-card" data-project="3"><div class="project-icon">♿</div><div class="project-name">Accessibility Lab</div><div class="project-desc">Apple — prototyping inclusive interaction patterns.</div></div>
+    <div class="project-card" data-project="4"><div class="project-icon">🌱</div><div class="project-name">Hydroponic Monitor</div><div class="project-desc">NUS Agritech — crop health dashboard & yield forecasting.</div></div>
+    <div class="project-card" data-project="5"><div class="project-icon">🏎️</div><div class="project-name">Pit Wall Telemetry</div><div class="project-desc">F1 analytics suite: driver comparison, corner delta, tyre deg.</div></div>
+    <div class="project-card" data-project="6"><div class="project-icon">💻</div><div class="project-name">Portfolio Website</div><div class="project-desc">Custom-built from scratch with HTML/CSS/JS.</div></div>
   </div>
   <div style="margin-top: 2rem; text-align: center;">
     <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
@@ -536,6 +592,72 @@ footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center;
 <footer>© 2025 Khong Chun Kit · built with care</footer>
 
 <!-- MODALS -->
+<!-- Project Modals -->
+<div id="projectModal1" class="modal">
+    <div class="project-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="project-modal-header">
+            <div class="project-modal-icon">📊</div>
+            <div class="project-modal-title">Edge AI Dashboard</div>
+        </div>
+        <div class="project-modal-subtitle">Predictive Maintenance · Industrial IoT</div>
+        <div class="project-modal-desc">Real-time anomaly detection system for manufacturing equipment. Reduces downtime by predicting failures before they occur.</div>
+        <div class="project-tech-list"><span class="project-tech-tag">Python</span><span class="project-tech-tag">TensorFlow</span><span class="project-tech-tag">Azure IoT</span><span class="project-tech-tag">Edge Computing</span></div>
+        <div class="project-placeholder-grid"><div class="project-placeholder">Dashboard UI</div><div class="project-placeholder">Sensor Data</div><div class="project-placeholder">Alert System</div><div class="project-placeholder">Analytics</div></div>
+    </div>
+</div>
+<div id="projectModal2" class="modal">
+    <div class="project-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="project-modal-header"><div class="project-modal-icon">🌿</div><div class="project-modal-title">Cooling Load Optimizer</div></div>
+        <div class="project-modal-subtitle">Environmental Control · Gardens by the Bay</div>
+        <div class="project-modal-desc">Smart climate management interface for the iconic domes. Reduces energy consumption while maintaining optimal plant conditions.</div>
+        <div class="project-tech-list"><span class="project-tech-tag">React</span><span class="project-tech-tag">D3.js</span><span class="project-tech-tag">MQTT</span><span class="project-tech-tag">InfluxDB</span></div>
+        <div class="project-placeholder-grid"><div class="project-placeholder">Temperature Map</div><div class="project-placeholder">Humidity Tracker</div><div class="project-placeholder">Energy Savings</div><div class="project-placeholder">Control Panel</div></div>
+    </div>
+</div>
+<div id="projectModal3" class="modal">
+    <div class="project-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="project-modal-header"><div class="project-modal-icon">♿</div><div class="project-modal-title">Accessibility Lab</div></div>
+        <div class="project-modal-subtitle">Inclusive Design · Apple</div>
+        <div class="project-modal-desc">Prototyping assistive technology features to make products usable for everyone, regardless of ability.</div>
+        <div class="project-tech-list"><span class="project-tech-tag">Swift</span><span class="project-tech-tag">VoiceOver</span><span class="project-tech-tag">UIKit</span><span class="project-tech-tag">Accessibility APIs</span></div>
+        <div class="project-placeholder-grid"><div class="project-placeholder">Voice Control</div><div class="project-placeholder">Gesture Demo</div><div class="project-placeholder">Screen Reader</div><div class="project-placeholder">Color Contrast</div></div>
+    </div>
+</div>
+<div id="projectModal4" class="modal">
+    <div class="project-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="project-modal-header"><div class="project-modal-icon">🌱</div><div class="project-modal-title">Hydroponic Monitor</div></div>
+        <div class="project-modal-subtitle">Smart Farming · NUS Agritech Centre</div>
+        <div class="project-modal-desc">Crop health dashboard tracking nutrient levels, growth cycles, and yield forecasts for urban farming.</div>
+        <div class="project-tech-list"><span class="project-tech-tag">Python</span><span class="project-tech-tag">ESP32</span><span class="project-tech-tag">Azure ML</span><span class="project-tech-tag">SQL</span></div>
+        <div class="project-placeholder-grid"><div class="project-placeholder">Nutrient Levels</div><div class="project-placeholder">Growth Tracker</div><div class="project-placeholder">Yield Forecast</div><div class="project-placeholder">Sensor Dashboard</div></div>
+    </div>
+</div>
+<div id="projectModal5" class="modal">
+    <div class="project-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="project-modal-header"><div class="project-modal-icon">🏎️</div><div class="project-modal-title">Pit Wall Telemetry</div></div>
+        <div class="project-modal-subtitle">F1 Analytics Suite</div>
+        <div class="project-modal-desc">Professional-grade telemetry analysis tool for race strategy. Driver comparison, corner-by-corner breakdown, tyre degradation modeling.</div>
+        <div class="project-tech-list"><span class="project-tech-tag">Python</span><span class="project-tech-tag">Plotly</span><span class="project-tech-tag">Pandas</span><span class="project-tech-tag">FastAPI</span></div>
+        <div class="project-placeholder-grid"><div class="project-placeholder">Lap Comparison</div><div class="project-placeholder">Telemetry Traces</div><div class="project-placeholder">Sector Times</div><div class="project-placeholder">Tyre Model</div></div>
+    </div>
+</div>
+<div id="projectModal6" class="modal">
+    <div class="project-modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="project-modal-header"><div class="project-modal-icon">💻</div><div class="project-modal-title">Portfolio Website</div></div>
+        <div class="project-modal-subtitle">Custom Built from Scratch</div>
+        <div class="project-modal-desc">Responsive portfolio with dark blue accents, orange highlights, and interactive modals. Deployed via GitHub Pages.</div>
+        <div class="project-tech-list"><span class="project-tech-tag">HTML5</span><span class="project-tech-tag">CSS3</span><span class="project-tech-tag">JavaScript</span><span class="project-tech-tag">GitHub Pages</span></div>
+        <div class="project-placeholder-grid"><div class="project-placeholder">Home Screen</div><div class="project-placeholder">Projects Page</div><div class="project-placeholder">Mobile View</div><div class="project-placeholder">Responsive</div></div>
+    </div>
+</div>
+
+<!-- Interest Modals -->
 <div id="photoModal" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h3>📸 Photography & Travel</h3><p style="margin-bottom:1rem; font-size:0.8rem;">Gallery placeholders — images coming soon</p><div class="photo-grid"><div class="photo-placeholder">Tokyo street</div><div class="photo-placeholder">Hawker centre</div><div class="photo-placeholder">Gardens by the Bay</div><div class="photo-placeholder">Train in Kyoto</div></div></div></div>
 <div id="foodModal" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h3>🍜 Foodie moments</h3><div class="photo-grid"><div class="photo-placeholder">Chili crab</div><div class="photo-placeholder">Laksa</div><div class="photo-placeholder">Sushi omakase</div><div class="photo-placeholder">Wonton mee</div></div></div></div>
 <div id="f1Modal" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h3>🏎️ F1 Telemetry</h3><div class="photo-grid"><div class="photo-placeholder">Pit wall UI</div><div class="photo-placeholder">Lap comparison</div><div class="photo-placeholder">Telemetry traces</div><div class="photo-placeholder">Circuit map</div></div></div></div>
@@ -578,21 +700,36 @@ const dropdown = document.getElementById('contactDropdown');
 bubbleBtn?.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('show'); });
 document.addEventListener('click', (e) => { if (!bubbleBtn?.contains(e.target) && !dropdown?.contains(e.target)) dropdown?.classList.remove('show'); });
 
-const modals = document.querySelectorAll('.modal');
-document.querySelectorAll('.interest-card').forEach(card => {
+// Project modal click handlers
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+        const projectNum = card.getAttribute('data-project');
+        const modalId = `projectModal${projectNum}`;
+        const targetModal = document.getElementById(modalId);
+        if (targetModal) targetModal.style.display = 'flex';
+    });
+});
+
+// Interest modal click handlers
+const interestCards = document.querySelectorAll('.interest-card');
+interestCards.forEach(card => {
   card.addEventListener('click', () => {
     const modalId = card.getAttribute('data-modal');
     const targetModal = document.getElementById(modalId);
     if (targetModal) targetModal.style.display = 'flex';
   });
 });
+
+// Close modals
 document.querySelectorAll('.modal-close').forEach(closeBtn => {
   closeBtn.addEventListener('click', () => { closeBtn.closest('.modal').style.display = 'none'; });
 });
-window.addEventListener('click', (e) => { modals.forEach(m => { if (e.target === m) m.style.display = 'none'; }); });
+window.addEventListener('click', (e) => { 
+  document.querySelectorAll('.modal').forEach(m => { if (e.target === m) m.style.display = 'none'; });
+});
 
 showPage('overview');
 </script>
 </body>
 </html>
-```
